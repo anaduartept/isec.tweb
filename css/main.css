@@ -1,0 +1,269 @@
+p.preHeader {
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+p.header {
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+p.text {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+p.caption {
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+p.bold {
+  font-weight: 900;
+}
+
+p.middleColor {
+  color: #788a97;
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: "source sans 3", calibri, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: black;
+}
+
+body {
+  background-color: white;
+}
+
+a {
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 0.025em;
+}
+a:hover {
+  color: #7a1f23;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  color: #b72e35;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.main-menu {
+  display: flex;
+  padding: 3px;
+}
+.main-menu li {
+  padding: 3px;
+  display: block;
+  list-style-type: none;
+  align-self: center;
+}
+.main-menu a {
+  padding: 0.5rem 1rem;
+}
+.main-menu .left {
+  margin-right: auto;
+}
+.main-menu li:first-child img {
+  border-right: 1px solid;
+}
+.main-menu .drc {
+  padding: 0;
+}
+
+.zoom {
+  overflow: hidden;
+}
+
+.zoom img {
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+.zoom img:hover { /* Safari and Chrome */ /* Firefox */ /* IE 9 */ /* Opera */
+  transform: scale(1.1);
+}
+
+.button {
+  background: #b72e35;
+  color: white;
+  padding: 7px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+#sec_institucional {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sec_institucional img {
+  position: absolute;
+}
+#sec_institucional article {
+  max-width: 800px;
+  position: absolute;
+  text-align: center;
+}
+#sec_institucional p {
+  color: white;
+}
+#sec_institucional p.line1 {
+  font-weight: normal;
+  font-size: 20px;
+}
+#sec_institucional p.line2 {
+  font-weight: bold;
+  font-size: 34px;
+}
+
+#sec_news {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+#sec_news a {
+  color: black;
+}
+#sec_news article {
+  border-left: #788a97 1px solid;
+  padding: 0 0 20px 10px;
+}
+
+#sec_articles {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#sec_articles img {
+  width: 100%;
+}
+#sec_articles article {
+  width: 25%;
+  margin: 5px;
+  background-image: url("../images/design-dots.svg"), radial-gradient(#ffffff, #fafafa);
+  background-position: right 10px center, left bottom;
+  background-repeat: repeat-y, no-repeat;
+  padding: 0 0 30px 0;
+}
+#sec_articles p {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#sec_world {
+  background-image: url("../images/design-dots.svg"), radial-gradient(#cccccc, #fafafa);
+  background-size: auto 90%, 150% 150%;
+  background-position: right 10px center, left top;
+  background-repeat: no-repeat;
+  color: #000;
+}
+
+#sec_records {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 40px;
+}
+#sec_records article {
+  flex: 0 0 20%;
+  margin: 0 20px;
+  text-align: center;
+}
+#sec_records img {
+  max-height: 60px;
+}
+
+#sec_message {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sec_message article {
+  max-width: 800px;
+  position: absolute;
+  text-align: center;
+}
+#sec_message img {
+  border-radius: 50%;
+}
+
+.footer {
+  display: flex;
+  padding: 3px;
+  height: 70px;
+  border-top: #788a97 1px solid;
+}
+.footer li {
+  padding: 3px;
+  display: block;
+  list-style-type: none;
+  align-self: center;
+}
+.footer a {
+  padding: 0.5rem 1rem;
+}
+.footer .left {
+  margin-right: auto;
+}/*# sourceMappingURL=main.css.map */
