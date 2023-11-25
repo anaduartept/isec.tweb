@@ -77,7 +77,7 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </li>
-        <li><button class="button"> &#9829; Donate</button></li>
+        <li><button class="button" data-modal="modal-donations"> &#9829; Donate</button></li>
         <li><a href="#"><img class="icon" role="img" src="images/icons/search.svg"></a></li>
         <!-- <li><button id="openSites" aria-label="Click to open list of DRC sites">
                         <svg id="menutool-dots" class="menutools" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -591,60 +591,53 @@
 
 
     <section id="sec_donations">
-      <form action="" class="frm-donations">
-        <fieldset>
-          <legend>Escolha a doação</legend>
-          <label> <input type="radio" name="taxi" id="taxi_car" required value="car">20€</label>
-          <label> <input type="radio" name="taxi" id="taxi_van" required value="van">40€</label>
-          <label> <input type="radio" name="taxi" id="taxi_tuk" required value="tuktuk">80€</label>
-          <label> <input type="radio" name="taxi" id="taxi_tuk" required value="tuktuk">Outro Valor</label>
-          <label> <input type="radio" name="taxi" id="taxi_tuk" required value="tuktuk">Periódica</label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Introduza os seus dados</legend>
-          <label for="email_address">Email </label>
-          <input type="email" name="email_address" id="email_address">
+      <div id="modal-donations" class="modal">
+        <form action="/" class="frm-donations">
+          <p class="preHeader bold">Support our work</p>
+          <fieldset>
+            <legend class="bold">Chose your donation:</legend>
+            <label class="text"><input type="radio" name="d-value" id="d-value-20" required value="20">20€</label>
+            <label class="text"><input type="radio" name="d-value" id="d-value-40" required value="40">40€</label>
+            <label class="text"><input type="radio" name="d-value" id="d-value-80" required value="80">80€</label>
+            <label class="text"><input type="radio" name="d-value" id="d-value-other" required
+                value="other">Other</label>
+            <label class="text"><input type="radio" name="d-value" id="d-value-monthly" required
+                value="montly">Monthly</label>
+          </fieldset>
 
           <fieldset>
-            <legend>Entidade</legend>
-            <label> <input type="radio" name="taxi" id="taxi_car" required value="car">Particular</label>
-            <label> <input type="radio" name="taxi" id="taxi_van" required value="van">Empresa</label>
+            <legend class="bold">Add your personal data:</legend>
+            <fieldset>
+              <label> <input type="radio" name="taxi" id="taxi_car" required value="car">Particular</label>
+              <label> <input type="radio" name="taxi" id="taxi_van" required value="van">Empresa</label>
+            </fieldset>
+            <label class="text" for="email_address">Email</label>
+            <input type="email" name="email_address" id="email_address" placeholder="Email">
+            <label for="name">Name </label>
+            <input type="text" name="name" id="name" required placeholder="Name">
+            <label for="last_name">Last name </label>
+            <input type="text" name="last_name" id="last_name" placeholder="Last name">
+            <label for="phone_number">Phone number</label>
+            <input type="tel" name="phone_number" id="phone_number" placeholder="Phone number">
 
-        
-            <label for="customer_name">Nome </label>
-            <input type="text" name="customer_name" id="customer_name" required>
-            <label for="customer_name">Apelido </label>
-            <input type="text" name="customer_name" id="customer_name" required>
-            <label for="phone_number">Telemóvel</label>
-            <input type="tel" name="phone_number" id="phone_number">
-
-            <label for="customer_name">NIF</label>
-            <input type="text" name="customer_name" id="customer_name" required>
-            <label for="customer_name">Nome </label>
-            <input type="text" name="customer_name" id="customer_name" required>
-
-            <label for="phone_number">Phone </label>
-            <input type="tel" name="phone_number" id="phone_number">
-  
+            <label for="nif">NIF</label>
+            <input type="number" name="nif" id="nif" required placeholder="NIF">
 
           </fieldset>
 
-          <label for="destino">Destino</label>
-          <select name="destino" id="destino">
+          <label for="country">Select Country</label>
+          <select name="country" id="country">
             <option value="p1" selected="selected">País 1</option>
-            <option value="p2" >País 2</option>
-            <option value="p3" >País 3</option>
-            <option value="p4" >País 4</option>
-            <option value="p5" >País 5</option>
-            <option value="p6" >País 6</option>
+            <option value="p2">País 2</option>
+            <option value="p3">País 3</option>
+            <option value="p4">País 4</option>
+            <option value="p5">País 5</option>
+            <option value="p6">País 6</option>
           </select>
 
-
-        </fieldset>
-
-        <button>Ok</button>
-      </form>
+          <button type="submit" href="/">Registar</button>
+        </form>
+      </div>
     </section>
 
 
@@ -671,8 +664,8 @@
       </li>
     </ul>
   </footer>
+
+  <script type="text/javascript" src="JS/main.js"></script>
 </body>
-
-
 
 </html>

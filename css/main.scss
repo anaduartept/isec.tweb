@@ -18,34 +18,34 @@ $footer-height: 70px;
 $section-height: 600px;
 
 
-//text size
-p.preHeader {
+//text classes
+.preHeader {
     font-weight: 400;
     font-size: 1.2rem;
     letter-spacing: .05em;
 }
 
-p.header {
+.header {
     font-weight: 900;
     font-size: 1.8rem;
 }
 
-p.text {
+.text {
     font-weight: 400;
     font-size: 1rem;
 }
 
-p.caption {
+.caption {
     font-weight: 400;
     font-size: 0.9rem;
     letter-spacing: .05em;
 }
 
-p.bold {
+.bold {
     font-weight: 900;
 }
 
-p.middleColor {
+.middleColor {
     color: $theme-middle-color;
 }
 
@@ -352,15 +352,34 @@ section {
 
 
 #sec_donations {
+    .modal{
+
+        //border: #b72e35 1px solid;
+        display: none;
+        position: fixed;
+        z-index: 8;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        //background-color: $theme-middle-color;
+        background-color: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+    }
+    
     .frm-donations {
 
+        //border: yellow 1px solid;
         display: grid;
-        grid-template-columns: [labels] auto [controls] 1fr;
+        grid-template-columns: [labels] 1fr [controls] 1fr;
         grid-auto-flow: row;
         grid-gap: .8em .5em;
 
         padding: 1.2em;
         width: 36em;
+        align-self: center;
+        background-color: $theme-light-color;
 
         label,
         fieldset {
@@ -380,6 +399,7 @@ section {
 
         fieldset {
             grid-column: span 2;
+            border-style: none;
         }
 
         button {
