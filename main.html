@@ -592,40 +592,35 @@
 
     <section id="sec_donations">
       <div id="modal-donations" class="modal">
-        <form action="/" class="frm-donations">
-          <p class="preHeader bold">Support our work</p>
-          <fieldset>
-            <legend class="bold">Chose your donation:</legend>
-            <label class="text"><input type="radio" name="d-value" id="d-value-20" required value="20">20€</label>
-            <label class="text"><input type="radio" name="d-value" id="d-value-40" required value="40">40€</label>
-            <label class="text"><input type="radio" name="d-value" id="d-value-80" required value="80">80€</label>
-            <label class="text"><input type="radio" name="d-value" id="d-value-other" required
-                value="other">Other</label>
-            <label class="text"><input type="radio" name="d-value" id="d-value-monthly" required
-                value="montly">Monthly</label>
-          </fieldset>
+        <!-- javascript:saveDonation(); -->
 
-          <fieldset>
-            <legend class="bold">Add your personal data:</legend>
-            <fieldset>
-              <label> <input type="radio" name="taxi" id="taxi_car" required value="car">Particular</label>
+        <form action="" class="frm-donations" id="frm-donations">
+          <p class="preHeader bold">Support our work</p>
+            <label class="label"><input class="text" onclick="javascript:enableOther(this);" type="radio" data="20" name="d-value" id="d-value-20" required value="20" checked>20€</label>
+            <label class="label"><input class="text" onclick="javascript:enableOther(this);" type="radio" data="40" name="d-value" id="d-value-40" required value="40">40€</label>
+            <label class="label"><input class="text" onclick="javascript:enableOther(this);" type="radio" data="80" name="d-value" id="d-value-80" required value="80">80€</label>
+            <label class="label"><input class="text" onclick="javascript:enableOther(this);" type="radio" data="other" name="d-value" id="d-value-other" required value="other">Other<span id="sp1" class="hide"><input type="number" name="txt-d-value-other" id="txt-d-value-other" min="5" step="5" ></input>€</span></label>
+            <label class="label"><input class="text" onclick="javascript:enableOther(this);" type="radio" data="monthly" name="d-value" id="d-value-monthly" required value="monthly">Monthly<span id="sp2" class="hide"><input type="number" name="txt-d-value-monthly" id="txt-d-value-montlhy" min="5" step="5"></input>€</span></label>
+          
+            <!-- <p class="preHeader bold">Support our work</p>
+              <label> <input type="radio" name="taxi" id="taxi_car" required value="car" checked>Particular</label>
               <label> <input type="radio" name="taxi" id="taxi_van" required value="van">Empresa</label>
-            </fieldset>
+          
             <label class="text" for="email_address">Email</label>
             <input type="email" name="email_address" id="email_address" placeholder="Email">
-            <label for="name">Name </label>
-            <input type="text" name="name" id="name" required placeholder="Name">
+            <label for="name">Name *</label>
+            <input type="text" name="name" id="name" required placeholder="Name" value="Ana" autocomplete="off">
             <label for="last_name">Last name </label>
-            <input type="text" name="last_name" id="last_name" placeholder="Last name">
+            <input type="text" name="last_name" id="last_name" placeholder="Last name" autocomplete="off">
             <label for="phone_number">Phone number</label>
-            <input type="tel" name="phone_number" id="phone_number" placeholder="Phone number">
+            <input type="tel" name="phone_number" id="phone_number" placeholder="Phone number" autocomplete="off">
 
-            <label for="nif">NIF</label>
-            <input type="number" name="nif" id="nif" required placeholder="NIF">
+            <label for="nif">NIF *</label>
+            <input type="number" name="nif" id="nif" required placeholder="12345678" value="1" autocomplete="off"> -->
 
-          </fieldset>
+          <!-- </fieldset> -->
 
-          <label for="country">Select Country</label>
+          <!-- <label for="country">Select Country</label>
           <select name="country" id="country">
             <option value="p1" selected="selected">País 1</option>
             <option value="p2">País 2</option>
@@ -634,8 +629,8 @@
             <option value="p5">País 5</option>
             <option value="p6">País 6</option>
           </select>
-
-          <button type="submit" href="/">Registar</button>
+ -->
+          <button type="submit">Save</button>
         </form>
       </div>
     </section>
