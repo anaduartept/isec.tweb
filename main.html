@@ -596,16 +596,16 @@
         <p class="preHeader bold">Give now to help change lives</p>
         <form action="" class="frm-donations" id="frm-donations">
 
-          <fieldset>
-            <p class="preHeader bold">1. Your donation</p>
-            <p class="text">choose your amount:</p>
+          <fieldset class="grid3">
+            <p class="preHeader bold col3">1. Your donation</p>
+            <p class="text col3">choose your amount:</p>
             <label class="label"><input class="text" type="radio" data="20" name="d-value" id="d-value-20" required
                 value="20" checked>20€</label>
             <label class="label"><input class="text" type="radio" data="40" name="d-value" id="d-value-40" required
                 value="40">40€</label>
             <label class="label"><input class="text" type="radio" data="80" name="d-value" id="d-value-80" required
                 value="80">80€</label>
-            <label class="label"><input class="text" type="radio" data="other" name="d-value" id="d-value-other"
+            <label class="label col3"><input class="text" type="radio" data="other" name="d-value" id="d-value-other"
                 required value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other"
                 min="5"></input>€</label>
             <!-- <label class="label"><input class="text" type="radio" data="monthly" name="d-value" id="d-value-monthly" required value="monthly">Monthly<span id="sp2" class="hide"><input type="number" name="txt-d-value-monthly" id="txt-d-value-montlhy" min="5" step="5"></input>€</span></label> -->
@@ -622,22 +622,22 @@
               Company
             </label>
           </fieldset>
-          <fieldset class="grid">
-            <label class="text" for="email_address">Email</label>
-              <input type="email" name="email_address" id="email_address" placeholder="Email">
-            <label for="name">Name *</label>
+          <fieldset class="grid2">
+            <label class="label" for="name">Name *</label>
               <input type="text" name="name" id="name" required placeholder="Name" autocomplete="off">
-            <label for="last_name">Last name </label>
+            <label class="label" for="last_name">Last name </label>
               <input type="text" name="last_name" id="last_name" placeholder="Last name" autocomplete="off">
-            <label for="phone_number">Phone number</label>
+            <label class="label" class="text" for="email_address">Email</label>
+              <input type="email" name="email_address" id="email_address" placeholder="Email">
+            <label class="label" for="phone_number">Phone number</label>
               <input type="tel" name="phone_number" id="phone_number" placeholder="Phone number" autocomplete="off">
-            <label for="nif">NIF *</label>
+            <label class="label" for="nif">NIF *</label>
               <input type="number" name="nif" id="nif" required placeholder="nif" value="" minlength="9" maxlength="9" autocomplete="off"> 
           </fieldset>
           
-          <fieldset class="grid">
-              <p class="preHeader bold">3. Where to help</p><span></span>
-              <label for="country">Country</label>
+          <fieldset class="grid2">
+              <p class="preHeader bold col2">3. Where to help</p>
+              <label class="label" for="country">Country</label>
               <select name="country" id="country">
                 <option value="p1" selected="selected">País 1</option>
                 <option value="p2">País 2</option>
@@ -648,8 +648,14 @@
               </select>
           </fieldset>
 
-          <fieldset>
-            <p class="preHeader bold">4. Payment information</p>
+          <fieldset class="grid2">
+            <p class="preHeader bold col2">4. Payment information</p>
+            <label class="label" for="name">Card number</label>
+              <input type="text" name="cardNumber" id="cardNumber" required placeholder="Card number" autocomplete="off">
+            <label class="label" for="expirationDate">Expiration date</label>
+              <input type="text" name="expirationDate" id="expirationDate" required placeholder="Expiration date" autocomplete="off">
+            <label class="label" for="securityCode">Security code</label>
+              <input type="text" name="securityCode" id="securityCode" required placeholder="Security code" autocomplete="off">
           </fieldset>
 
           <fieldset>

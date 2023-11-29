@@ -370,10 +370,24 @@ section {
             margin: 0.4rem;
         }
 
-        .grid{
+        .grid2{
             display: grid;
-            grid-template-columns: [labels] 1fr [controls] 1fr;
+            grid-template-columns: 1fr 1fr;
             grid-auto-flow: row;        
+        }
+
+        .col2{
+            grid-column: span 2;
+        }
+
+        .grid3{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-flow: row;        
+        }
+        
+        .col3{
+            grid-column: span 3;
         }
 
         input::-webkit-outer-spin-button,
