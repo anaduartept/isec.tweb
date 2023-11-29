@@ -291,10 +291,21 @@ section {
 #sec_donations .frm-donations p {
   margin: 0.4rem;
 }
-#sec_donations .frm-donations .grid {
+#sec_donations .frm-donations .grid2 {
   display: grid;
-  grid-template-columns: [labels] 1fr [controls] 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-auto-flow: row;
+}
+#sec_donations .frm-donations .col2 {
+  grid-column: span 2;
+}
+#sec_donations .frm-donations .grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: row;
+}
+#sec_donations .frm-donations .col3 {
+  grid-column: span 3;
 }
 #sec_donations .frm-donations input::-webkit-outer-spin-button,
 #sec_donations .frm-donations input::-webkit-inner-spin-button {

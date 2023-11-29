@@ -1,11 +1,7 @@
 
 
-//init()
-function init()
-{
-  document.getElementsByClassName("hide").style.display="none"; 
-}
 
+//alterar isto, como só temos 1 modal não vale a pena ter o ciclo
 
 let modalBtns = [...document.querySelectorAll(".button")];
       modalBtns.forEach(function (btn) {
@@ -27,6 +23,9 @@ let modalBtns = [...document.querySelectorAll(".button")];
         }
       };
 
+
+      //se se quiser chamar a funcao pelo action do form
+
       function saveDonation(){
         alert('aqui');
         
@@ -35,29 +34,6 @@ let modalBtns = [...document.querySelectorAll(".button")];
         const formData = new FormData(form);
 
         alert(formData.get("d-value"));
-
-      };
-
-
-      
-      function enableOther(radio) {
-        data = radio.getAttribute("data")
-
-        //alert(data=="other");
-  
-        
-        var el = 'sp1';
-        if(data=="other")
-          document.getElementById(el).style.display = "inline-block";
-        else
-          document.getElementById(el).style.display = "none";
-
-          var el = 'sp2';
-          if(data=="monthly")
-            document.getElementById(el).style.display = "inline-block";
-          else
-            document.getElementById(el).style.display = "none";
-  
 
       };
 
@@ -78,9 +54,7 @@ let modalBtns = [...document.querySelectorAll(".button")];
           dValue=frmDonations.elements["txt-d-value-other"].value;
         else if(dValue=="monthly")
           dValue=frmDonations.elements["txt-d-value-monthly"].value;
-        
-        
-          alert(dValue);
+      
         var nMeals= 0;
 
         if (dValue>40)
