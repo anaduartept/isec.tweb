@@ -87,6 +87,8 @@ a {
 .icon {
     width: 22px;
     height: 22px;
+    padding: 0;
+    margin: 0;
 }
 
 //menu dropdown
@@ -209,21 +211,46 @@ section {
     position: relative;
     width: $content-width;
     height: 70vh;
-    overflow: hidden;
+    //overflow: hidden;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    //justify-content: center;
+    //align-items: center;
 
     img {
-        position: absolute;
+        //top: 0;
+        //left: 0;
+        //position: absolute;
+        //width: 100%;
+        //height: 100%;
+        //overflow: hidden;
     }
 
+    @keyframes shrink {
+        0% {
+          background-size: 110%;
+        }
+        100% {
+          background-size: 100%;
+        }
+      }
+
     article {
-        max-width: 800px;
+        display: flex;
+        flex-direction: column;
         position: absolute;
-        //background: rgba(0,0,0,.3);
+        width: 100%;
+        height: 100%;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+
+
+        background-image:  url("../images/media/img_institucional.jpg") ;
+        background-color: lightgray;
+        background-blend-mode: multiply;
+        background-position: center center;
+        animation: shrink 5s infinite alternate;
     }
 
     p {
@@ -231,12 +258,17 @@ section {
     }
 
     p.line1 {
-        font-weight: normal;
-        font-size: 20px;
-
+        font-weight: 400;
+        font-size: 1.6rem;
+        transition: 1000ms;
+        //& = parent selector (p) 
+        &:hover{
+            letter-spacing: 0.1em;
+        }
     }
 
     p.line2 {
+        width: 800px;
         font-weight: bold;
         font-size: $large-font-size;
     }
