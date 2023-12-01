@@ -49,6 +49,11 @@ $section-height: 600px;
     color: $theme-middle-color;
 }
 
+.message{
+    color: $theme-contrast-color;
+    font-size: small;
+}
+
 
 * {
     box-sizing: border-box;
@@ -457,3 +462,22 @@ section {
     }
 
 }
+
+
+
+            #myearth {
+              height: 66vh;
+              overflow: hidden;
+            }
+
+            .tooltip {
+              white-space: nowrap;
+              font-weight: 900;
+              font-size: 1.1em;
+              line-height: 110%;
+              color: white;
+              opacity: .8;
+              transform: translate(-50%, -100%);
+              text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+            }
+  

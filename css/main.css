@@ -28,6 +28,11 @@
   color: #788a97;
 }
 
+.message {
+  color: #b72e35;
+  font-size: small;
+}
+
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -352,4 +357,20 @@ section {
 }
 .footer .left {
   margin-right: auto;
+}
+
+#myearth {
+  height: 66vh;
+  overflow: hidden;
+}
+
+.tooltip {
+  white-space: nowrap;
+  font-weight: 900;
+  font-size: 1.1em;
+  line-height: 110%;
+  color: white;
+  opacity: 0.8;
+  transform: translate(-50%, -100%);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=main.css.map */
