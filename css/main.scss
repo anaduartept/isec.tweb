@@ -484,11 +484,17 @@ section {
     position: absolute;
     top:0;
     width: $content-width;
+    z-index: 1;
+    right:-$content-width;
+    transition: right 1s ease-in-out;
+
     .modal{
         display:none;
         flex-direction: column;
         padding:2rem;
         background: #c9d0d5;
+        z-index: 2;
+        height: 100vh;
     }
 }
 
@@ -516,6 +522,35 @@ section {
 
 }
 
+/* Add Animation */
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+
+@-webkit-keyframes slideIn {
+    from {right: -300px; opacity: 0} 
+    to {right: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {right: -300px; opacity: 0}
+    to {right: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
 
 
             #myearth {

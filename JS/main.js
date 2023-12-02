@@ -1,15 +1,5 @@
 
 
-
-//alterar isto, como só temos 1 modal não vale a pena ter o ciclo
-
-let modalBtns = [...document.querySelectorAll(".button")];
-modalBtns.forEach(function (btn) {
-  btn.onclick = function () {
-    let modal = btn.getAttribute("data-modal");
-    document.getElementById(modal).style.display = "flex";
-  };
-});
 // let closeBtns = [...document.querySelectorAll(".close")];
 // closeBtns.forEach(function (btn) {
 //   btn.onclick = function () {
@@ -17,10 +7,32 @@ modalBtns.forEach(function (btn) {
 //     modal.style.display = "none";
 //   };
 // });
+
+
 window.onclick = function (event) {
-  if (event.target.className === "modal") {
-    event.target.style.display = "none";
+  switch (event.target.id) {
+    case "sec-menu-institucional":
+      document.getElementById("modal-institucional").style.display="none";
+      document.getElementById("sec-menu-institucional").style.right = "-100%";
+        break;
+    case "modal-donations":
+      document.getElementById("modal-donations").style.display="none";
+      break;
+    case "btn-donations":
+      document.getElementById("modal-donations").style.display = "flex";
+    break;
+    case "btn-institucional":
+      document.getElementById("modal-institucional").style.display = "flex";
+      document.getElementById("sec-menu-institucional").style.right = 0;
+    break;
+    
+    default:
+        break;
   }
+
+        // if (event.target.className === "modal") {
+  //   event.target.style.display = "none";
+  // }
 
   if(event.target.value=="company"){
     document.getElementById("last_name").style.visibility="hidden";
@@ -65,12 +77,6 @@ window.onclick = function (event) {
 };
 
 
-// let information = document.getElementById("company");
-// information.addEventListener("click", function(e) {
-//   document.getElementById("last_name").disabled = true;
-// });
-
-
 
 //se se quiser chamar a funcao pelo action do form
 
@@ -80,41 +86,9 @@ function saveDonation() {
 
   const formData = new FormData(form);
 
-  alert(formData.get("d-value"));
+  //alert(formData.get("d-value"));
 
 };
-
-
-//botão de submit
-
-let frmDonations = document.getElementById("frm-donations");
-
-frmDonations.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // let name = document.getElementById("name");
-  // let nif = document.getElementById("nif");
-
-  // var dValue = frmDonations.elements["d-value"].value;
-
-  // if (dValue == "other")
-  //   dValue = frmDonations.elements["txt-d-value-other"].value;
-  // else if (dValue == "monthly")
-  //   dValue = frmDonations.elements["txt-d-value-monthly"].value;
-
-  // var nMeals = 0;
-
-  // if (dValue > 40) {
-  //   nMeals = dValue / 1.5 / 2;
-  //   alert("O seu donativo permitirá alimentar diariamente " + parseInt(nMeals) + " pessoas.");
-  // }
-  // else {
-  //   nMeals = dValue / 1.5;
-  //   alert("O seu donativo permitirá fornecer aproximadamente " + parseInt(nMeals) + " refeições.");
-  // }
-
-
-});
 
 
 
