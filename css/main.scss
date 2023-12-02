@@ -17,6 +17,8 @@ $header-height: 4rem;
 $footer-height: 70px;
 $section-height: 600px;
 
+// variavel para controlar o scale (zoom) das imagens
+$scale: 0.9;
 
 //text classes
 .preHeader {
@@ -175,20 +177,20 @@ li.dropdown {
 }
 
 .zoom img {
-    transition: all .2s ease;
+    transition: all 1s ease;
     vertical-align: middle;
 }
 
 .zoom img:hover {
-    -webkit-transform: scale(1.1);
+    -webkit-transform: scale($scale);
     /* Safari and Chrome */
-    -moz-transform: scale(1.1);
+    -moz-transform: scale($scale);
     /* Firefox */
-    -ms-transform: scale(1.1);
+    -ms-transform: scale($scale);
     /* IE 9 */
-    -o-transform: scale(1.1);
+    -o-transform: scale($scale);
     /* Opera */
-    transform: scale(1.1);
+    transform: scale($scale);
 }
 
 .button {

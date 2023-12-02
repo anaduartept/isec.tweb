@@ -136,7 +136,7 @@ li.dropdown {
 }
 
 .zoom img {
-  transition: all 0.2s ease;
+  transition: all 1s ease;
   vertical-align: middle;
 }
 
@@ -145,7 +145,7 @@ li.dropdown {
   /* Firefox */
   /* IE 9 */
   /* Opera */
-  transform: scale(1.1);
+  transform: scale(0.9);
 }
 
 .button {
