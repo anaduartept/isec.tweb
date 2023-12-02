@@ -291,25 +291,26 @@ section {
 }
 
 #sec_donations {
-  display: block;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
 #sec_donations .modal {
-  display: none;
   position: fixed;
-  left: 0;
-  top: 0;
+  display: none;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 #sec_donations .frm-donations {
-  overflow-y: auto;
   padding: 0.5em;
   width: 25rem;
   background-color: white;
+  overflow: auto;
 }
 #sec_donations .frm-donations label,
 #sec_donations .frm-donations fieldset,
@@ -358,6 +359,22 @@ section {
   color: white;
   padding: 7px 20px;
   border-radius: 5px;
+}
+
+#sec-menu-institucional {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#sec-menu-institucional .modal {
+  display: none;
+  flex-direction: column;
+  padding: 2rem;
+  background: #c9d0d5;
 }
 
 .footer {
