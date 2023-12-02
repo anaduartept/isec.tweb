@@ -187,6 +187,7 @@ section {
   background-color: lightgray;
   background-blend-mode: multiply;
   background-position: center center;
+  background-attachment: fixed;
   animation: shrink 5s infinite alternate;
 }
 #sec_institucional p {

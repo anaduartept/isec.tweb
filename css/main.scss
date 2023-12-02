@@ -250,6 +250,8 @@ section {
         background-color: lightgray;
         background-blend-mode: multiply;
         background-position: center center;
+        // fixar imagem quando se faz scroll
+        background-attachment: fixed;
         animation: shrink 5s infinite alternate;
     }
 
