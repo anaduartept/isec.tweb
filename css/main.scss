@@ -12,7 +12,7 @@ $small-font-size: 12px;
 $large-font-size: 34px;
 
 //sections
-$content-width: 100%;
+$content-width: 100vw;
 $header-height: 4rem;
 $footer-height: 70px;
 $section-height: 600px;
@@ -98,6 +98,7 @@ li.dropdown {
     display: inline-block;
 }
 
+//como dado nas teoricas: display:none, position:absolute, display:block
 .dropdown-content {
     display: none;
     position: absolute;
@@ -126,10 +127,10 @@ li.dropdown {
     display: block;
 }
 
+//fim dropdown
 
 .main-menu {
     display: flex;
-    //border: 1px solid black;
     padding: 0.5rem;
     height: $header-height;
 
@@ -141,7 +142,6 @@ li.dropdown {
     a {
         padding: 0.5rem 1rem;
     }
-
 
     .professional {
         font-size: 1.2rem;
@@ -209,9 +209,8 @@ section {
 
 
 #sec_institucional {
-    //border: 1px solid yellow;
     position: relative;
-    width: $content-width;
+    max-width: $content-width;
     height: 70vh;
     //overflow: hidden;
 
@@ -241,14 +240,15 @@ section {
         display: flex;
         flex-direction: column;
         position: absolute;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         text-align: center;
         justify-content: center;
         align-items: center;
 
-
         background-image:  url("../images/media/img_institucional.jpg") ;
+        
+        //com o blend mode torna a imagem mais escura
         background-color: lightgray;
         background-blend-mode: multiply;
         background-position: center center;
@@ -272,7 +272,9 @@ section {
     }
 
     p.line2 {
-        width: 800px;
+        //assim continua responsive e não cresce mais/faz as duas linhas de texto 
+        max-width: 800px;
+
         font-weight: bold;
         font-size: $large-font-size;
     }
@@ -522,35 +524,24 @@ section {
 
 }
 
-/* Add Animation */
-@-webkit-keyframes slide {
-    100% { left: 0; }
-}
+//janela menor que 600px
+@media all and (max-width:1000px) {
 
-@keyframes slide {
-    100% { left: 0; }
-}
+    li.dropdown {
+        display:none;
+    }
+
+    #btn-donations{
+        display:none;
+    }
+
+} 
 
 
-@-webkit-keyframes slideIn {
-    from {right: -300px; opacity: 0} 
-    to {right: 0; opacity: 1}
-}
 
-@keyframes slideIn {
-    from {right: -300px; opacity: 0}
-    to {right: 0; opacity: 1}
-}
 
-@-webkit-keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
-}
+//apagar esta parte para baixo
+//está cá só para consulta caso se vá fazer algo mais na pag
 
 
             #myearth {

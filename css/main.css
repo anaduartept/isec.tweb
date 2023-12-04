@@ -162,7 +162,7 @@ section {
 
 #sec_institucional {
   position: relative;
-  width: 100%;
+  max-width: 100vw;
   height: 70vh;
   display: flex;
 }
@@ -178,8 +178,8 @@ section {
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -202,14 +202,14 @@ section {
   letter-spacing: 0.1em;
 }
 #sec_institucional p.line2 {
-  width: 800px;
+  max-width: 800px;
   font-weight: bold;
   font-size: 34px;
 }
 
 #sec_news {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -225,7 +225,7 @@ section {
 
 #sec_articles {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -257,7 +257,7 @@ section {
 
 #sec_records {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -275,7 +275,7 @@ section {
 
 #sec_message {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 250px;
   display: flex;
   justify-content: center;
@@ -294,14 +294,14 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   position: absolute;
   top: 0;
 }
 #sec_donations .modal {
   position: fixed;
   display: none;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.4);
@@ -368,9 +368,9 @@ section {
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 1;
-  right: -100%;
+  right: -100vw;
   transition: right 1s ease-in-out;
 }
 #sec-menu-institucional .modal {
@@ -401,28 +401,12 @@ section {
   margin-right: auto;
 }
 
-/* Add Animation */
-@keyframes slide {
-  100% {
-    left: 0;
+@media all and (max-width: 1000px) {
+  li.dropdown {
+    display: none;
   }
-}
-@keyframes slideIn {
-  from {
-    right: -300px;
-    opacity: 0;
-  }
-  to {
-    right: 0;
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+  #btn-donations {
+    display: none;
   }
 }
 #myearth {
