@@ -221,7 +221,6 @@ section {
 }
 
 #sec_articles, #sec_about_work {
-  border: 1px solid blue;
   position: relative;
   width: 100vw;
   height: auto;
@@ -233,7 +232,6 @@ section {
   width: 100%;
 }
 #sec_articles article, #sec_about_work article {
-  border: 1px solid red;
   width: 90%;
   margin: 5px;
   background-image: url("../images/design-dots.svg"), radial-gradient(#ffffff, #fafafa);
@@ -397,23 +395,42 @@ section {
   height: 100vh;
 }
 
-.footer {
+footer {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 3px;
-  height: 70px;
   border-top: #788a97 1px solid;
 }
-.footer li {
+footer li {
   padding: 3px;
   display: block;
   list-style-type: none;
   align-self: center;
 }
-.footer a {
-  padding: 0.5rem 1rem;
+footer a {
+  margin: 0.2rem;
 }
-.footer .left {
-  margin-right: auto;
+footer div {
+  margin: 1rem;
+}
+footer #links {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+footer #links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer #social {
+  margin-top: 20px;
+}
+footer #social img {
+  width: 1.5rem;
+  margin: 0.1rem;
 }
 
 @media all and (max-width: 1000px) {
@@ -426,6 +443,24 @@ section {
   }
   #btn-donations {
     display: none;
+  }
+  footer {
+    margin-top: 30px;
+    height: auto;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  footer div {
+    margin: 0.5rem;
+  }
+  footer #links {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer #links ul {
+    flex-direction: column;
+    align-items: center;
   }
 }
 @media all and (max-width: 800px) {

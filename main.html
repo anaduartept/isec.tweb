@@ -83,7 +83,7 @@
           <!-- <a href=""><img class="icon" src="images/icons/menu2.png" id="btn-menu-institucional"></a> -->
           <button class="button" data-modal="modal-institucional" id="btn-institucional">:::</button>
         </li>
-        </ul>
+      </ul>
     </nav>
   </header>
 
@@ -255,46 +255,47 @@
           <fieldset>
             <p class="preHeader bold">2. Your information</p>
             <label>
-              <input type="radio" name="information" id="individual" required value="individual" checked autocomplete="off" >Individual
+              <input type="radio" name="information" id="individual" required value="individual" checked
+                autocomplete="off">Individual
             </label>
-            <label> 
+            <label>
               <input type="radio" name="information" id="company" required value="company" autocomplete="off">Company
             </label>
           </fieldset>
           <fieldset class="grid2">
             <label class="label" for="name">Name *</label>
-              <input type="text" name="name" id="name" required autocomplete="off">
+            <input type="text" name="name" id="name" required autocomplete="off">
             <label class="label" for="last_name">Last name </label>
-              <input type="text" name="last_name" id="last_name" autocomplete="off">
+            <input type="text" name="last_name" id="last_name" autocomplete="off">
             <label class="label" class="text" for="email_address">Email</label>
-              <input type="email" name="email_address" id="email_address">
+            <input type="email" name="email_address" id="email_address">
             <label class="label" for="phone_number">Phone number</label>
-              <input type="tel" name="phone_number" id="phone_number" autocomplete="off">
+            <input type="tel" name="phone_number" id="phone_number" autocomplete="off">
             <label class="label" for="nif">NIF *</label>
-              <input type="number" name="nif" id="nif" required value="" minlength="9" maxlength="9" autocomplete="off"> 
+            <input type="number" name="nif" id="nif" required value="" minlength="9" maxlength="9" autocomplete="off">
           </fieldset>
-          
+
           <fieldset class="grid2">
-              <p class="preHeader bold col2">3. Where to help</p>
-              <label class="label" for="country">Country</label>
-              <select name="country" id="country" autocomplete="off" >
-                <option value="p1" selected="selected">País 1</option>
-                <option value="p2">País 2</option>
-                <option value="p3">País 3</option>
-                <option value="p4">País 4</option>
-                <option value="p5">País 5</option>
-                <option value="p6">País 6</option>
-              </select>
+            <p class="preHeader bold col2">3. Where to help</p>
+            <label class="label" for="country">Country</label>
+            <select name="country" id="country" autocomplete="off">
+              <option value="p1" selected="selected">País 1</option>
+              <option value="p2">País 2</option>
+              <option value="p3">País 3</option>
+              <option value="p4">País 4</option>
+              <option value="p5">País 5</option>
+              <option value="p6">País 6</option>
+            </select>
           </fieldset>
 
           <fieldset class="grid2">
             <p class="preHeader bold col2">4. Payment information</p>
             <label class="label" for="name">Card number</label>
-              <input type="text" name="cardNumber" id="cardNumber" required autocomplete="off">
+            <input type="text" name="cardNumber" id="cardNumber" required autocomplete="off">
             <label class="label" for="expirationDate">Expiration date</label>
-              <input type="text" name="expirationDate" id="expirationDate" required autocomplete="off">
+            <input type="text" name="expirationDate" id="expirationDate" required autocomplete="off">
             <label class="label" for="securityCode">Security code</label>
-              <input type="text" name="securityCode" id="securityCode" required autocomplete="off">
+            <input type="text" name="securityCode" id="securityCode" required autocomplete="off">
           </fieldset>
 
           <fieldset>
@@ -305,7 +306,7 @@
     </section>
 
 
-  	<section id="sec-menu-institucional">
+    <section id="sec-menu-institucional">
       <div id="modal-institucional" class="modal">
         <li>Home
           <ul>
@@ -357,27 +358,33 @@
         </li>
       </div>
     </section>
-
   </main>
 
 
 
   <footer>
-    <ul class="footer">
-      <li>
-        <p class="caption">© 2023 DRC Danish Refugee Council</p>
-      </li>
-      <li><a href="#" class="caption">Cookie Settings</a></li>
-      <li><a href="#" class="caption">Privacy Policy</a></li>
-      <li><a href="#" class="caption">Code of Conduct</a></li>
-      <li class="left"><a href="#" class="caption">Terms of Use</a></li>
-      <li>
-        <img src="images//icons/facebook.svg" alt="Facebook">
-        <img src="images/icons/instagram.svg" alt="Instagram">
-        <img src="images/icons/linkedin.svg" alt="Linkedin">
-        <img src="images/icons/twitter-x.svg" alt="X">
-      </li>
-    </ul>
+    <div id="copyright">
+      <p class="caption">© 2023 DRC Danish Refugee Council</p>
+    </div>
+    <div id="links">
+      <ul>
+        <li><a href="#" class="caption">Cookie Settings</a></li>
+        <li><a href="#" class="caption">Privacy Policy</a></li>
+        <li><a href="#" class="caption">Code of Conduct</a></li>
+        <li><a href="#" class="caption">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div id="social">
+      <a href="https://www.facebook.com/danishrefugeecouncil">
+        <img src="images/icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/danishrefugeecouncil">
+        <img src="images/icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/company/danish-refugee-council">
+        <img src="images/icons/linkedin.svg" alt="Linkedin"></a>
+      <a href="https://twitter.com/drc_ngo">
+        <img src="images/icons/twitter-x.svg" alt="X"></a>
+      </ul>
+    </div>
   </footer>
 
   <script type="text/javascript" src="JS/main.js"></script>
