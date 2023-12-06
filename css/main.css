@@ -215,11 +215,13 @@ section {
   color: black;
 }
 #sec_news article {
+  flex: 1 1 50%;
   border-left: #788a97 1px solid;
   padding: 0 0 20px 10px;
 }
 
-#sec_articles {
+#sec_articles, #sec_about_work {
+  border: 1px solid blue;
   position: relative;
   width: 100vw;
   height: auto;
@@ -227,20 +229,30 @@ section {
   flex-direction: row;
   flex-wrap: nowrap;
 }
-#sec_articles img {
+#sec_articles img, #sec_about_work img {
   width: 100%;
 }
-#sec_articles article {
-  width: 25%;
+#sec_articles article, #sec_about_work article {
+  border: 1px solid red;
+  width: 90%;
   margin: 5px;
   background-image: url("../images/design-dots.svg"), radial-gradient(#ffffff, #fafafa);
   background-position: right 10px center, left bottom;
   background-repeat: repeat-y, no-repeat;
-  padding: 0 0 30px 0;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
 }
-#sec_articles p {
+#sec_articles article .button, #sec_about_work article .button {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#sec_articles p, #sec_about_work p {
+  width: -moz-fit-content;
+  width: fit-content;
   margin-bottom: 20px;
   font-weight: bold;
+  font-size: 1.6rem;
 }
 
 #sec_world {
@@ -249,6 +261,10 @@ section {
   background-position: right 10px center, left top;
   background-repeat: no-repeat;
   color: #000;
+}
+#sec_world article {
+  margin: 0 auto;
+  width: 80%;
 }
 
 #sec_records {
@@ -262,7 +278,7 @@ section {
 }
 #sec_records article {
   flex: 0 0 20%;
-  margin: 0 20px;
+  margin: 20px;
   text-align: center;
 }
 #sec_records img {
@@ -282,8 +298,11 @@ section {
   position: absolute;
   text-align: center;
 }
-#sec_message img {
+#sec_message article img {
   border-radius: 50%;
+}
+#sec_message article p {
+  margin-top: 20px;
 }
 
 #sec_donations {
@@ -400,9 +419,24 @@ section {
 @media all and (max-width: 1000px) {
   li.dropdown {
     display: none;
+    background-color: #b72e35;
+  }
+  li.dropdown a {
+    color: white;
   }
   #btn-donations {
     display: none;
+  }
+}
+@media all and (max-width: 800px) {
+  #sec_news {
+    flex-direction: column;
+  }
+  #sec_articles, #sec_records, #sec_about_work {
+    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 #myearth {
