@@ -25,6 +25,22 @@ window.onclick = function (event) {
       document.getElementById("modal-institucional").style.display = "flex";
       document.getElementById("sec-menu-institucional").style.right = 0;
     break;
+    case "btn-toggle":
+      //document.getElementsByClassName("main-menu")[0].classList.add("main-menu-toggle");  
+      //document.getElementsByClassName("main-menu")[0].classList.remove("main-menu");  
+      
+    
+
+      // let lis = [...document.getElementsByClassName("dropdown")];
+      //   lis.forEach(function (li) {
+      //     li.classList.remove("dropdown");
+      //      li.classList.add("menuToggle");
+      //   });
+
+      //document.getElementsByClassName("dropdown")[0].style.display="block";
+      //document.getElementsByClassName("download").style.display="block";
+      
+    break;
     
     default:
         break;

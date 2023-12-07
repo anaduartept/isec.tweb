@@ -57,13 +57,6 @@ a:hover {
   color: #7a1f23;
 }
 
-.icon {
-  width: 22px;
-  height: 22px;
-  padding: 0;
-  margin: 0;
-}
-
 li.dropdown {
   display: inline-block;
 }
@@ -102,9 +95,7 @@ li.dropdown {
 .main-menu li {
   list-style-type: none;
   align-self: center;
-}
-.main-menu a {
-  padding: 0.5rem 1rem;
+  padding: 0 10px 0 10px;
 }
 .main-menu .professional {
   font-size: 1.2rem;
@@ -114,7 +105,7 @@ li.dropdown {
 .main-menu .left {
   margin-right: auto;
 }
-.main-menu li:first-child svg {
+.main-menu li:first-child {
   border-right: 1px solid;
 }
 .main-menu .drc-logo {
@@ -126,7 +117,60 @@ li.dropdown {
   transition: 250ms;
   overflow: hidden;
   overflow-clip-margin: content-box;
-  padding-right: 1rem;
+}
+.main-menu #btn-toggle {
+  display: none;
+}
+.main-menu #btn-institucional {
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: -10px;
+}
+
+.main-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  height: 4rem;
+}
+.main-menu-toggle li {
+  list-style-type: none;
+  align-self: center;
+  padding: 0 10px 0 10px;
+}
+.main-menu-toggle .professional {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #788a97;
+}
+.main-menu-toggle .left {
+  margin-right: auto;
+}
+.main-menu-toggle li:first-child {
+  border-right: 1px solid;
+}
+.main-menu-toggle .drc-logo {
+  height: 1.25rem;
+}
+.main-menu-toggle .drc-logo svg {
+  height: 100%;
+  fill: #b72e35;
+  transition: 250ms;
+  overflow: hidden;
+  overflow-clip-margin: content-box;
+}
+.main-menu-toggle #btn-institucional {
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: -10px;
 }
 
 .zoom {
@@ -181,10 +225,11 @@ section {
   background-image: url("../images/media/img_institucional.jpg");
   background-color: lightgray;
   background-blend-mode: multiply;
-  background-position: 50% 50%;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  animation: shrink 5s infinite alternate;
 }
 #sec_institucional p {
   color: white;
@@ -351,6 +396,9 @@ section {
   -webkit-appearance: none;
   margin: 0;
 }
+#sec_donations .frm-donations input[type=number] {
+  width: 6rem;
+}
 #sec_donations .frm-donations input,
 #sec_donations .frm-donations select,
 #sec_donations .frm-donations button {
@@ -433,13 +481,49 @@ footer #social img {
   margin: 0.1rem;
 }
 
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bar-items {
+  display: flex;
+}
+
+.nav-bar-items-right {
+  margin-left: auto;
+  border: #b72e35 solid 1px;
+}
+
 @media all and (max-width: 1000px) {
+  .nav-bar,
+  .nav-bar-items {
+    flex-direction: column;
+  }
+  .nav-bar-items {
+    display: none;
+  }
+  .nav-bar-items-right {
+    margin-left: 0;
+  }
   li.dropdown {
     display: none;
-    background-color: #b72e35;
   }
-  li.dropdown a {
-    color: white;
+  .btn-white {
+    display: flex;
+    color: black;
+    font-weight: 900;
+    font-size: 26px;
+    cursor: pointer;
+  }
+  .main-menu #btn-toggle {
+    display: flex;
+    color: black;
+    background-color: white;
+    border: none;
+    font-weight: 900;
+    font-size: 26px;
+    cursor: pointer;
   }
   #btn-donations {
     display: none;
@@ -464,6 +548,9 @@ footer #social img {
   }
 }
 @media all and (max-width: 800px) {
+  #sec_institucional article {
+    animation-name: none;
+  }
   #sec_news {
     flex-direction: column;
   }
