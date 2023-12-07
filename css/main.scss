@@ -26,6 +26,13 @@ $scale: 0.9;
     letter-spacing: .05em;
 }
 
+.preHeader2 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: .05em;
+    color: $theme-middle-color;
+}
+
 .header {
     font-weight: 900;
     font-size: 1.8rem;
@@ -83,6 +90,35 @@ a {
     }
 }
 
+//navbar
+
+  .Navbar {
+    background-color: #46ACC2;
+    display: flex;
+    padding: 16px;
+    font-family: sans-serif;
+    color: white;
+  }
+
+  .Navbar__Items {
+    display:flex;
+  }
+
+  .Navbar__Link {
+    padding-right: 8px;
+  }
+
+  .Navbar__Items--right {
+    margin-left:auto;
+  }
+
+  .Navbar__Link-toggle {
+    display: none;
+  }
+
+  //fim Navbar
+
+
 
 //menu dropdown
 li.dropdown {
@@ -132,10 +168,6 @@ li.dropdown {
         padding: 0 10px 0 10px;
     }
 
-    // a {
-    //     padding: 0.5rem 1rem;
-    // }
-
     .professional {
         font-size: 1.2rem;
         font-weight: 400;
@@ -148,73 +180,10 @@ li.dropdown {
 
     li:first-child {
         border-right: 1px solid;
-    }
-
-    .drc-logo {
-        height: 1.25rem;
-
-        svg {
-            height: 100%;
-            fill: $theme-contrast-color;
-            transition: 250ms;
-            overflow: hidden;
-            overflow-clip-margin: content-box;
-            //padding-right: 1rem;
-        }
     }
 
     #btn-toggle{
         display: none;
-    }
-
-    #btn-institucional{
-        background-color: $theme-light-color;
-        border: none;
-        color: $theme-dark-color;
-        cursor: pointer;
-        font-weight: 900;
-        font-size: 26px;
-        letter-spacing: -10px;
-    }
-}
-
-.main-menu-toggle {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    height: $header-height;
-
-    li {
-        list-style-type: none;
-        align-self: center;
-        padding: 0 10px 0 10px;
-    }
-
-    .professional {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: $theme-middle-color;
-    }
-
-    .left {
-        margin-right: auto;
-    }
-
-    li:first-child {
-        border-right: 1px solid;
-    }
-
-    .drc-logo {
-        height: 1.25rem;
-
-        svg {
-            height: 100%;
-            fill: $theme-contrast-color;
-            transition: 250ms;
-            overflow: hidden;
-            overflow-clip-margin: content-box;
-            //padding-right: 1rem;
-        }
     }
 
     #btn-institucional{
@@ -261,20 +230,9 @@ section {
     max-width: $content-width;
     height: 70vh;
     overflow: hidden;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @keyframes shrink {
-        0% {
-            background-size: 110%;
-        }
-
-        100% {
-            background-size: 100%;
-        }
-    }
 
     article {
         display: flex;
@@ -297,6 +255,18 @@ section {
         background-attachment: fixed;
         // quando se ativa a animação, a imagem fica mais pequena
         // ao mudar a largura do viewport
+
+        //animação aos 0% completas (início) e 100%(terminada)
+        @keyframes shrink {
+            0% {
+                background-size: 110%;
+            }
+    
+            100% {
+                background-size: 100%;
+            }
+        }
+        //nome animação 
         animation: shrink 5s infinite alternate;
     }
 
@@ -529,7 +499,6 @@ section {
     }
 }
 
-
 #sec-menu-institucional {
     display: flex;
     flex-direction: row;
@@ -542,6 +511,14 @@ section {
     right: -$content-width;
     transition: right 1s ease-in-out;
 
+    p.preHeader{
+        padding: 20px 0;
+    }
+
+    p.preHeader2{
+        padding: 25px 0 20px 0;
+    }
+
     .modal {
         display: none;
         flex-direction: column;
@@ -550,7 +527,20 @@ section {
         z-index: 2;
         height: 100vh;
     }
+    #close{
+        //border:none;
+        width: 1.8rem;
+        height: 1.8 rem;
+        border:0;
+        border-radius: 50%;
+        background: $theme-dark-color;
+        color:$theme-light-color;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
 }
+
+
 
 footer {
     display: flex;
@@ -598,37 +588,34 @@ footer {
     }
 }
 
-.nav-bar{
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-bar-items{
-    display: flex;
-}
-
-.nav-bar-items-right{
-    margin-left: auto;
-    border: #b72e35 solid 1px;
-}
 
 // MEDIA QUERIES
 // =============
 //viewport menor que 1000px
 @media all and (max-width:1000px) {
  
-    .nav-bar,
-    .nav-bar-items{
-        flex-direction: column;
-    }
+    //navbar
+    // .Navbar__Items,
+    // .Navbar {
+    //   flex-direction: column;
+    // }
+    // .Navbar__Items {
+    //     display:none;
+    // }
+    // .Navbar__Items--right {
+    //   margin-left: 0;
+    // }
+    // .Navbar__Link-toggle {
+    //     align-self: flex-end;
+    //     display: initial;
+    //     position: absolute;
+    //     cursor: pointer;
+    // }
 
-    .nav-bar-items{
-        display: none;
-    }
-
-    .nav-bar-items-right{
-        margin-left: 0;
-    }
+    // .ToggleShow{
+    //     display: flex;
+    // }
+    //end navbar
 
     //#menu-dropdown{
     li.dropdown {
@@ -638,6 +625,10 @@ footer {
         // a {
         //     color: white;
         // }
+    }
+
+    li.toggleShow{
+        display: flex;
     }
 
     .btn-white{
@@ -706,14 +697,11 @@ footer {
         justify-content: center;
         align-items: center;
 
-        article {
+        //article {
             //border: 1px solid blue;
-        }
+        //}
     }
 }
-
-
-
 
 //apagar esta parte para baixo
 //está cá só para consulta caso se vá fazer algo mais na pag

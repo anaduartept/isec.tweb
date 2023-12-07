@@ -1,12 +1,29 @@
 
 
-// let closeBtns = [...document.querySelectorAll(".close")];
-// closeBtns.forEach(function (btn) {
-//   btn.onclick = function () {
-//     let modal = btn.closest(".modal");
-//     modal.style.display = "none";
-//   };
-// });
+
+
+//botão toggle
+//função que troca a classe para cada elemento: 
+// function classToggle() {
+//   const navs = document.querySelectorAll('.Navbar__Items')
+//   navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+// }
+
+function classToggle() {
+  
+  const navs = document.querySelectorAll('.dropdown')
+  navs.forEach(nav => nav.classList.toggle('toggleShow'));
+}
+
+
+//add eventlistener no click do botão, para chamar a função troca
+document.querySelector('#btn-toggle')
+  .addEventListener('click', classToggle);
+  // document.querySelector('.Navbar__Link-toggle')
+  // .addEventListener('click', classToggle);
+
+  //fim botão toggle
+
 
 
 window.onclick = function (event) {
@@ -26,18 +43,6 @@ window.onclick = function (event) {
       document.getElementById("sec-menu-institucional").style.right = 0;
     break;
     case "btn-toggle":
-      //document.getElementsByClassName("main-menu")[0].classList.add("main-menu-toggle");  
-      //document.getElementsByClassName("main-menu")[0].classList.remove("main-menu");  
-      
-    
-
-      // let lis = [...document.getElementsByClassName("dropdown")];
-      //   lis.forEach(function (li) {
-      //     li.classList.remove("dropdown");
-      //      li.classList.add("menuToggle");
-      //   });
-
-      //document.getElementsByClassName("dropdown")[0].style.display="block";
       //document.getElementsByClassName("download").style.display="block";
       
     break;
@@ -46,9 +51,6 @@ window.onclick = function (event) {
         break;
   }
 
-        // if (event.target.className === "modal") {
-  //   event.target.style.display = "none";
-  // }
 
   if(event.target.value=="company"){
     document.getElementById("last_name").style.visibility="hidden";
