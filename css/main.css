@@ -406,7 +406,7 @@ section {
   flex-direction: row;
   justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
   z-index: 1;
@@ -419,6 +419,13 @@ section {
 #sec-menu-institucional p.preHeader2 {
   padding: 25px 0 20px 0;
 }
+#sec-menu-institucional a {
+  padding: 15px 0 10px 0;
+}
+#sec-menu-institucional a:hover {
+  background-color: #bfbfbf;
+  border-radius: 5px;
+}
 #sec-menu-institucional .modal {
   display: none;
   flex-direction: column;
@@ -426,8 +433,9 @@ section {
   background: #c9d0d5;
   z-index: 2;
   height: 100vh;
+  overflow: auto;
 }
-#sec-menu-institucional #close {
+#sec-menu-institucional #btn-close {
   width: 1.8rem;
   height: 1.8 rem;
   border: 0;

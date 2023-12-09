@@ -5,29 +5,36 @@
 //   navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
 // }
 
-function classToggle() {
-  
+function actionToggle() {
   const navs = document.querySelectorAll('.dropdown')
   navs.forEach(nav => nav.classList.toggle('toggleShow'));
 }
 
-
 //add eventlistener no click do botão, para chamar a função troca
 document.querySelector('#btn-toggle')
-  .addEventListener('click', classToggle);
+  .addEventListener('click', actionToggle);
   // document.querySelector('.Navbar__Link-toggle')
   // .addEventListener('click', classToggle);
 
   //fim botão toggle
+
+  function actionClose() {
+    document.getElementById("sec-menu-institucional").style.right = "-100%";    
+    document.getElementById("modal-institucional").style.display="none";
+  }
+  
+  document.querySelector('#btn-close')
+    .addEventListener('click', actionClose);
 
 
 
 window.onclick = function (event) {
   switch (event.target.id) {
     case "sec-menu-institucional":
-      document.getElementById("modal-institucional").style.display="none";
+      //ao clicar fora da modal
       document.getElementById("sec-menu-institucional").style.right = "-100%";
-        break;
+      document.getElementById("modal-institucional").style.display="none";
+      break;
     case "modal-donations":
       document.getElementById("modal-donations").style.display="none";
       break;
@@ -38,39 +45,22 @@ window.onclick = function (event) {
       document.getElementById("modal-institucional").style.display = "flex";
       document.getElementById("sec-menu-institucional").style.right = 0;
     break;
-    case "btn-toggle":
       //document.getElementsByClassName("main-menu")[0].classList.add("main-menu-toggle");  
       //document.getElementsByClassName("main-menu")[0].classList.remove("main-menu");  
-      
-    
-
-      // let lis = [...document.getElementsByClassName("dropdown")];
-      //   lis.forEach(function (li) {
-      //     li.classList.remove("dropdown");
-      //      li.classList.add("menuToggle");
-      //   });
-
-      //document.getElementsByClassName("dropdown")[0].style.display="block";
-      //document.getElementsByClassName("download").style.display="block";
-      
-    break;
     
     default:
         break;
   }
 
-        // if (event.target.className === "modal") {
-  //   event.target.style.display = "none";
-  // }
-
   if(event.target.value=="company"){
-    document.getElementById("last_name").style.visibility="hidden";
-    //document.getElementById("last_name").disabled = true;
-    //document.getElementById("last_name").style.backgroundColor="gray";
+    //document.getElementById("last_name").style.visibility="hidden";
+    document.getElementById("last_name").disabled = true;
+    document.getElementById("last_name").style.backgroundColor="#E8E8E8";
   }
   if(event.target.value=="individual"){
-    //document.getElementById("last_name").disabled = false;
-    document.getElementById("last_name").style.visibility="visible";
+    document.getElementById("last_name").disabled = false;
+    document.getElementById("last_name").style.backgroundColor="#FFFFFF";
+    //document.getElementById("last_name").style.visibility="visible";
   }
 
   

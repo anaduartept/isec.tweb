@@ -11,58 +11,12 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 
-  <!--scripts necessarios para o download-->
-
+  <!--scripts necessarios para o download aqui-->
 </head>
 
 <body>
   <!--"section.container>div*4>img+a:link" e pressionar TAB:>-->
   <header>
-    <!-- <div class="Navbar">
-      
-        <div class="Navbar__Link Navbar__Link-brand">
-          DRC&nbsp;&nbsp;|&nbsp;&nbsp;Professional
-        </div>
-         <div class="Navbar__Link">
-          Professional
-        </div> 
-        <div class="Navbar__Link Navbar__Link-toggle">
-          <button>&#9776;</button>
-        </div>
-      
-        <nav class="Navbar__Items Navbar__Items--right">
-          <div class="Navbar__Link">
-            Longer Link
-          </div>
-          <div class="Navbar__Link">
-            <li class="dropdown"><a href="#">About us</a>
-              <ul class="dropdown-content">
-                <li><a href="#">Organisation</a></li>
-                <li><a href="#">Partners and donors</a></li>
-                <li><a href="#">Strategic framework</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </li>    
-          </div>
-          <nav>
-
-            <nav class="Navbar__Items--right">
-            <div class="Navbar__Link">
-              <button class="button" data-modal="modal-donations" id="btn-donations"> &#9829; Donate</button>
-            </div>
-            <div class="Navbar__Link">
-              <a href="#"><img src="images/icons/search.svg"></a>
-            </div>
-            <div class="Navbar__Link">
-              <button data-modal="modal-institucional" id="btn-institucional">&#10247;&#10247;&#10247;</button>
-            </div>
-            </nav>
-          
-    </div> -->
-
-
-
-
     <nav>
       <ul class="main-menu">
         <li class="drc-logo ">
@@ -123,13 +77,10 @@
 
   <main>
     <section id="sec_institucional">
-      <!-- <img src="images/media/img_institucional.jpg" alt="Helping refugees and other displaced people worldwide"> -->
-
       <article>
         <p class="line1">Since 1956</p>
         <p class="line2">Helping refugees and other displaced people worldwide</p>
       </article>
-
     </section>
 
     <section id="sec_news">
@@ -265,10 +216,7 @@
 
     <section id="sec_donations">
       <div id="modal-donations" class="modal">
-        <!-- javascript:saveDonation(); -->
-        <!-- <p class="preHeader bold">Give now to help change lives</p> -->
         <form action="" class="frm-donations" id="frm-donations">
-
           <fieldset class="grid3">
             <p class="preHeader bold col3">1. Your donation</p>
             <p class="text col3">choose your amount:</p>
@@ -282,7 +230,6 @@
                 required value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other"
                 min="5"></input>€</label>
             <p class="message col3" value="message" id="message"></p>
-
             <!-- <label class="label"><input class="text" type="radio" data="monthly" name="d-value" id="d-value-monthly" required value="monthly">Monthly<span id="sp2" class="hide"><input type="number" name="txt-d-value-monthly" id="txt-d-value-montlhy" min="5" step="5"></input>€</span></label> -->
           </fieldset>
 
@@ -339,42 +286,53 @@
       </div>
     </section>
 
-
     <section id="sec-menu-institucional">
       <div id="modal-institucional" class="modal">
-        <button class="preHeader bold" id="close">»</button>
+        <button class="preHeader bold" id="btn-close">»</button>
         <p class="preHeader bold">Our sites</p>
         <p></p>
         <p class="preHeader2">Home</p>
-        <p class="bold">www.drc.ngo</p>
-        <p class="text">See all DRC sites and choose your section.</p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">www.drc.ngo</p>
+          <p class="text">See all DRC sites and choose your section.</p>
+        </a>
         <p></p>
         <p class="preHeader2">English sites</p>
-        <p class="bold">Help</p>
-        <p class="text">Read about our work and support people on the move.</p>
-        <p></p>        
-        <p class="bold">Jobs</p>
-        <p class="text">Want to work in DRC?</p>
-        <p></p>        
-        <p class="bold">Forum</p>
-        <p class="text">Sign up for the DRC Global Innovation Forum.</p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Help</p>
+          <p class="text">Read about our work and support people on the move.</p>
+        </a>
+        <p></p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Jobs</p>
+          <p class="text">Want to work in DRC?</p>
+        </a>
+        <p></p>
+        <a href="https://www.drc.ngo">        
+          <p class="bold">Forum</p>
+          <p class="text">Sign up for the DRC Global Innovation Forum.</p>
+        </a>
         <p></p>        
         <p class="preHeader2">Danske sites</p>
-        <p class="bold">Help</p>
-        <p class="text">Læs om vores arbejde for verdens flygtninge og støt.</p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Help</p>
+          <p class="text">Læs om vores arbejde for verdens flygtninge og støt.</p>
+        </a>
+        <p></p>
+        <a href="https://www.drc.ngo">        
+          <p class="bold">Shops</p>
+          <p class="text">Køb en T-shirt, kop eller plakat.</p>
+        </a>
         <p></p>        
-        <p class="bold">Shops</p>
-        <p class="text">Køb en T-shirt, kop eller plakat.</p>
-        <p></p>        
-        <p class="bold">Asyl</p>
-        <p class="text">Rådgivning om asyl i Danmark.</p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Asyl</p>
+          <p class="text">Rådgivning om asyl i Danmark.</p>
+        </a>
         <p></p>        
 
       </div> 
     </section>
   </main>
-
-
 
   <footer>
     <div id="copyright">
