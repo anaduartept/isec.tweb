@@ -1,21 +1,17 @@
 //botão toggle
-//função que troca a classe para cada elemento: 
-// function classToggle() {
-//   const navs = document.querySelectorAll('.Navbar__Items')
-//   navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
-// }
 
 function actionToggle() {
-  const navs = document.querySelectorAll('.dropdown')
-  navs.forEach(nav => nav.classList.toggle('toggleShow'));
+  document.getElementById('nav-dropdown').classList.toggle("nav-toggle");
+
+const lis = document.querySelectorAll('.dropdown')
+    lis.forEach(lis => lis.classList.toggle('li-toggle'));
 }
+
 
 //add eventlistener no click do botão, para chamar a função troca
 document.querySelector('#btn-toggle')
   .addEventListener('click', actionToggle);
-  // document.querySelector('.Navbar__Link-toggle')
-  // .addEventListener('click', classToggle);
-
+ 
   //fim botão toggle
 
   function actionClose() {
@@ -45,6 +41,9 @@ window.onclick = function (event) {
       document.getElementById("modal-institucional").style.display = "flex";
       document.getElementById("sec-menu-institucional").style.right = 0;
     break;
+     //document.getElementById("nav-dropdown").style.display="none";
+      //document.getElementById("btn-donations").style.display="flex";
+
       //document.getElementsByClassName("main-menu")[0].classList.add("main-menu-toggle");  
       //document.getElementsByClassName("main-menu")[0].classList.remove("main-menu");  
     
