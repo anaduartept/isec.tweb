@@ -425,6 +425,7 @@ section {
     width: $content-width;
     position: absolute;
     top: 0;
+    z-index: 5;
 
     .modal {
         position: fixed;
@@ -514,7 +515,7 @@ section {
     position: fixed;
     top: 0;
     width: $content-width;
-    z-index: 1;
+    z-index: 3;
     right: -$content-width;
     transition: right 1s ease-in-out;
 
@@ -621,22 +622,28 @@ footer {
             position: absolute;
             display:flex;
             flex-direction: column;
-            top: 0;
+            top: 60px;
             left: 0;
             width: 100%;
-            height: 60%;
-            z-index: 3;
+            height: 100%;
+            z-index: 20;
             background-color:$theme-contrast-color;
-                
-            li.li-toggle{
-                width: 100%;
-                height: 10%;
-                padding: 25px;
-                border-top:$theme-light-color dotted 1px;
-                a{
-                     color:$theme-light-color;
-                }
-            }    
+                    
+        }
+    }
+
+    ul.ul-toggle{
+        display: flex;
+        flex-direction: column;
+    }
+
+    li.li-toggle{
+        width: 100%;
+        height: 10%;
+        padding: 25px;
+        border-top:$theme-light-color dotted 1px;
+        a{
+             color:$theme-light-color;
         }
     }
 

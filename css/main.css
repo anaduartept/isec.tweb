@@ -320,6 +320,7 @@ section {
   width: 100%;
   position: absolute;
   top: 0;
+  z-index: 5;
 }
 #sec_donations .modal {
   position: fixed;
@@ -395,7 +396,7 @@ section {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
   right: -100%;
   transition: right 1s ease-in-out;
 }
@@ -478,20 +479,24 @@ footer #social img {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 100%;
-    height: 60%;
-    z-index: 3;
+    height: 100%;
+    z-index: 20;
     background-color: #b72e35;
   }
-  .main-menu #nav-dropdown.nav-toggle li.li-toggle {
+  ul.ul-toggle {
+    display: flex;
+    flex-direction: column;
+  }
+  li.li-toggle {
     width: 100%;
     height: 10%;
     padding: 25px;
     border-top: white dotted 1px;
   }
-  .main-menu #nav-dropdown.nav-toggle li.li-toggle a {
+  li.li-toggle a {
     color: white;
   }
   .btn-white {

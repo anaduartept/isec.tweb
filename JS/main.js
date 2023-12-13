@@ -1,18 +1,50 @@
-//botão toggle
 
+var txtOtherValue=document.getElementById("txt-d-value-other");
+var txtMessage=document.getElementById("message");
+var btnSaveDonation=document.getElementById("btnSaveDonation");
+var form = document.querySelector('form');
+
+// Evento para que o submit não submeta qualquer dados
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+});
+
+
+window.onload = function () {
+  init(); 
+};
+
+function init() { 
+    txtMessage.style.visibility="hidden";
+    txtOtherValue.style.visibility="hidden";     
+}
+
+
+//botão toggle
 function actionToggle() {
   document.getElementById('nav-dropdown').classList.toggle("nav-toggle");
-
+  
 const lis = document.querySelectorAll('.dropdown')
     lis.forEach(lis => lis.classList.toggle('li-toggle'));
+}
+
+function actionToggleUls(){
+  // if (e.classList.contains("li-toggle")) {
+  //   const uls = document.querySelectorAll('.dropdown-content')
+  //   uls.forEach(uls => uls.classList.toggle('ul-toggle'));
+  // }
 }
 
 
 //add eventlistener no click do botão, para chamar a função troca
 document.querySelector('#btn-toggle')
   .addEventListener('click', actionToggle);
- 
+
+ document.querySelector('.dropdown')
+  .addEventListener('click', actionToggleUls);
   //fim botão toggle
+
+
 
   function actionClose() {
     document.getElementById("sec-menu-institucional").style.right = "-100%";    
@@ -23,77 +55,115 @@ document.querySelector('#btn-toggle')
     .addEventListener('click', actionClose);
 
 
+  //fechar as modal ao clicar
+  document.getElementById("sec-menu-institucional").addEventListener("click",function(){
+    document.getElementById("sec-menu-institucional").style.right = "-100%";
+    document.getElementById("modal-institucional").style.display="none";
+  });
 
-window.onclick = function (event) {
-  switch (event.target.id) {
-    case "sec-menu-institucional":
-      //ao clicar fora da modal
-      document.getElementById("sec-menu-institucional").style.right = "-100%";
-      document.getElementById("modal-institucional").style.display="none";
-      break;
-    case "modal-donations":
-      document.getElementById("modal-donations").style.display="none";
-      break;
-    case "btn-donations":
-      document.getElementById("modal-donations").style.display = "flex";
-    break;
-    case "btn-institucional":
-      document.getElementById("modal-institucional").style.display = "flex";
-      document.getElementById("sec-menu-institucional").style.right = 0;
-    break;
-     //document.getElementById("nav-dropdown").style.display="none";
-      //document.getElementById("btn-donations").style.display="flex";
 
-      //document.getElementsByClassName("main-menu")[0].classList.add("main-menu-toggle");  
-      //document.getElementsByClassName("main-menu")[0].classList.remove("main-menu");  
-    
-    default:
-        break;
-  }
+// Donativos
+
+txtOtherValue.addEventListener("focusout",function(){
+    calculaNRefeicoes();
+})
+
+  document.getElementById("modal-donations").addEventListener("click",function(){
+    //tem de passar a botao fechar
+    //document.getElementById("modal-donations").style.display="none";
+    //this.style.display="none";
+  });
+
+  document.getElementById("btn-institucional").addEventListener("click",function(){
+    document.getElementById("modal-institucional").style.display = "flex";
+    document.getElementById("sec-menu-institucional").style.right = 0;
+  });
+
+  document.getElementById("btn-donations").addEventListener("click",function(){
+    document.getElementById("modal-donations").style.display = "flex";
+  });
+
+
+
+  window.onclick = function (event) {
 
   if(event.target.value=="company"){
-    //document.getElementById("last_name").style.visibility="hidden";
     document.getElementById("last_name").disabled = true;
     document.getElementById("last_name").style.backgroundColor="#E8E8E8";
   }
   if(event.target.value=="individual"){
     document.getElementById("last_name").disabled = false;
     document.getElementById("last_name").style.backgroundColor="#FFFFFF";
-    //document.getElementById("last_name").style.visibility="visible";
   }
-
-  
-  if(event.target.value=="other"){
-    document.getElementById("txt-d-value-other").focus();
-  }
-
-  if(event.target.name=="d-value")
-  {
-    //vamos calcular n refeiçoes e escrever a mensagem
-    var dValue = frmDonations.elements["d-value"].value;
-
-    if (dValue == "other")
-      dValue = frmDonations.elements["txt-d-value-other"].value;
-    else if (dValue == "monthly")
-      dValue = frmDonations.elements["txt-d-value-monthly"].value;
-
-    var nMeals = 0;
-
-    if (dValue <= 40) {
-      nMeals = dValue / 1.5 / 2;
-      document.getElementById("message").innerHTML="*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals) + " pessoas.";
-    }
-    else {
-      nMeals = dValue / 1.5;
-      document.getElementById("message").innerHTML="*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals/2) + " pessoas.<br/>*O seu donativo permitirá fornecer aproximadamente " + parseInt(nMeals) + " refeições.";
-    }
-
-  }
-
-
-
 };
 
+
+
+const radioButtons = document.querySelectorAll('input[name="d-value"]');
+for(const radioButton of radioButtons){
+    radioButton.addEventListener('change', showSelected);
+} 
+
+
+function showSelected(e) {
+  if (this.checked) {
+      txtOtherValue.style.visibility="hidden";
+      if (this.value=="other")
+      {
+        txtMessage.innerHTML="";
+        txtOtherValue.style.visibility="visible";
+        txtOtherValue.focus();
+      }
+      else
+      {
+        txtOtherValue.value="";
+        txtMessage.style.visibility="visible";
+        calculaNRefeicoes();
+      }
+  }
+}
+
+
+function calculaNRefeicoes(){
+      //vamos calcular n refeiçoes e escrever a mensagem
+      var dValue = form.elements["d-value"].value;
+
+      if (dValue == "other")
+        dValue = form.elements["txt-d-value-other"].value;
+      else if (dValue == "monthly")
+        dValue = form.elements["txt-d-value-monthly"].value;
+  
+      var nMeals = 0;
+  
+      if (dValue <= 40) {
+        nMeals = dValue / 1.5 / 2;
+        document.getElementById("message").innerHTML="*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals) + " pessoas.";
+      }
+      else {
+        nMeals = dValue / 1.5;
+        document.getElementById("message").innerHTML="*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals/2) + " pessoas.<br/>*O seu donativo permitirá fornecer aproximadamente " + parseInt(nMeals) + " refeições.";
+      }
+}
+
+btnSaveDonation.addEventListener("click",function(){
+  validaFormulario();
+});
+
+function validaFormulario() {
+  if (form.checkValidity()) {
+      var selOther=document.getElementById("d-value-other").checked;
+      var donation= txtOtherValue.value;
+          
+      if(selOther && donation=="")
+          txtOtherValue.setCustomValidity('Please add value!');
+      else{
+           calculaNRefeicoes(notaTrab,notaExame);
+      }
+  }
+  else {
+      form.querySelectorAll(':invalid')[0].focus();
+  }
+}
 
 
 //se se quiser chamar a funcao pelo action do form
