@@ -62,6 +62,23 @@ $scale: 0.9;
     font-size: small;
 }
 
+.globe-regions {
+    text-align: center;
+    margin-top: 40px;
+
+    a {
+        color: $theme-contrast-color;
+    }
+}
+
+#about-work {
+    margin-top: 50px;
+    font-weight: 300;
+    font-size: 1.7rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
 
 * {
     box-sizing: border-box;
@@ -364,6 +381,7 @@ section {
     background-position: right 10px center, left top;
     background-repeat: no-repeat;
     color: #000;
+    padding-bottom: 40px;
 
     article {
         margin: 0 auto;
@@ -618,32 +636,34 @@ footer {
         #nav-dropdown {
             display: none;
         }
-        #nav-dropdown.nav-toggle{
+
+        #nav-dropdown.nav-toggle {
             position: absolute;
-            display:flex;
+            display: flex;
             flex-direction: column;
             top: 60px;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: 20;
-            background-color:$theme-contrast-color;
-                    
+            background-color: $theme-contrast-color;
+
         }
     }
 
-    ul.ul-toggle{
+    ul.ul-toggle {
         display: flex;
         flex-direction: column;
     }
 
-    li.li-toggle{
+    li.li-toggle {
         width: 100%;
         height: 10%;
         padding: 25px;
-        border-top:$theme-light-color dotted 1px;
-        a{
-             color:$theme-light-color;
+        border-top: $theme-light-color dotted 1px;
+
+        a {
+            color: $theme-light-color;
         }
     }
 
