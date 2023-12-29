@@ -68,12 +68,6 @@ txtOtherValue.addEventListener("focusout", function () {
   calculaNRefeicoes();
 })
 
-document.getElementById("modal-donations").addEventListener("click", function () {
-  //tem de passar a botao fechar
-  //document.getElementById("modal-donations").style.display="none";
-  //this.style.display="none";
-});
-
 document.getElementById("btn-institucional").addEventListener("click", function () {
   document.getElementById("modal-institucional").style.display = "flex";
   document.getElementById("sec-menu-institucional").style.right = 0;
@@ -83,7 +77,10 @@ document.getElementById("btn-donations").addEventListener("click", function () {
   document.getElementById("modal-donations").style.display = "flex";
 });
 
-
+document.getElementById("btnCancelDonation").addEventListener("click", function () {
+  //tem de passar a botao fechar
+  document.getElementById("modal-donations").style.display="none";
+});
 
 window.onclick = function (event) {
 
