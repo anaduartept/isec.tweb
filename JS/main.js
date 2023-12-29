@@ -1,167 +1,177 @@
 
-var txtOtherValue=document.getElementById("txt-d-value-other");
-var txtMessage=document.getElementById("message");
-var btnSaveDonation=document.getElementById("btnSaveDonation");
+var txtOtherValue = document.getElementById("txt-d-value-other");
+var txtMessage = document.getElementById("message");
+var btnSaveDonation = document.getElementById("btnSaveDonation");
 var form = document.querySelector('form');
 
 // Evento para que o submit não submeta qualquer dados
 form.addEventListener('submit', function (event) {
-    event.preventDefault();
+  event.preventDefault();
 });
 
 
 window.onload = function () {
-  init(); 
+  init();
 };
 
-function init() { 
-    txtMessage.style.visibility="hidden";
-    txtOtherValue.style.visibility="hidden";     
+function init() {
+  txtMessage.style.visibility = "hidden";
+  txtOtherValue.style.visibility = "hidden";
 }
 
 
 //botão toggle
 function actionToggle() {
   document.getElementById('nav-dropdown').classList.toggle("nav-toggle");
-  
-const lis = document.querySelectorAll('.dropdown')
-    lis.forEach(lis => lis.classList.toggle('li-toggle'));
+  const lis = document.querySelectorAll('.dropdown')
+  lis.forEach(lis => lis.classList.toggle('li-toggle'));
+  // Alterna a visibilidade do scroll da página principal ao abrir ou fechar o menu
+  if (document.querySelector("body").style.overflow == "hidden") {
+    document.querySelector("body").style.overflow = "auto";
+  }
+  else {
+    document.querySelector("body").style.overflow = "hidden";
+  }
 }
 
-function actionToggleUls(){
+function actionToggleUls() {
   // if (e.classList.contains("li-toggle")) {
   //   const uls = document.querySelectorAll('.dropdown-content')
   //   uls.forEach(uls => uls.classList.toggle('ul-toggle'));
   // }
 }
 
-
 //add eventlistener no click do botão, para chamar a função troca
 document.querySelector('#btn-toggle')
   .addEventListener('click', actionToggle);
 
- document.querySelector('.dropdown')
+document.querySelector('.dropdown')
   .addEventListener('click', actionToggleUls);
-  //fim botão toggle
+//fim botão toggle
+
+// Mostra menu institucional
+document.getElementById("btn-institucional").addEventListener("click", function () {
+  document.getElementById("modal-institucional").style.display = "flex";
+  document.getElementById("sec-menu-institucional").style.right = 0;
+  // esconde o scroll
+  document.querySelector("body").style.overflow = "hidden";
+});
+
+// Fecha menu institucional
+function actionClose() {
+  document.getElementById("sec-menu-institucional").style.right = "-100%";
+  document.getElementById("modal-institucional").style.display = "none";
+  // mostra o scroll
+  document.querySelector("body").style.overflow = "auto";
+}
+
+document.querySelector('#btn-close')
+  .addEventListener('click', actionClose);
 
 
-
-  function actionClose() {
-    document.getElementById("sec-menu-institucional").style.right = "-100%";    
-    document.getElementById("modal-institucional").style.display="none";
-  }
-  
-  document.querySelector('#btn-close')
-    .addEventListener('click', actionClose);
-
-
-  //fechar as modal ao clicar
-  document.getElementById("sec-menu-institucional").addEventListener("click",function(){
-    document.getElementById("sec-menu-institucional").style.right = "-100%";
-    document.getElementById("modal-institucional").style.display="none";
-  });
+//fechar as modal ao clicar
+// document.getElementById("sec-menu-institucional").addEventListener("click", function () {
+//   document.getElementById("sec-menu-institucional").style.right = "-100%";
+//   document.getElementById("modal-institucional").style.display = "none";
+// });
 
 
 // Donativos
 
-txtOtherValue.addEventListener("focusout",function(){
-    calculaNRefeicoes();
+txtOtherValue.addEventListener("focusout", function () {
+  calculaNRefeicoes();
 })
 
-  document.getElementById("modal-donations").addEventListener("click",function(){
-    //tem de passar a botao fechar
-    //document.getElementById("modal-donations").style.display="none";
-    //this.style.display="none";
-  });
 
-  document.getElementById("btn-institucional").addEventListener("click",function(){
-    document.getElementById("modal-institucional").style.display = "flex";
-    document.getElementById("sec-menu-institucional").style.right = 0;
-  });
+document.getElementById("btn-donations").addEventListener("click", function () {
+  // esconde o scroll da página principal
+  document.querySelector("body").style.overflow = "hidden";
+  // mostra a modal das doações
+  document.getElementById("modal-donations").style.display = "flex";
+});
 
-  document.getElementById("btn-donations").addEventListener("click",function(){
-    document.getElementById("modal-donations").style.display = "flex";
-  });
+document.getElementById("btnCancelDonation").addEventListener("click", function () {
+  // esconde a modal das doações
+  document.getElementById("modal-donations").style.display="none";
+  // mostra o scroll da página principal
+  document.querySelector("body").style.overflow = "auto";
+});
 
+window.onclick = function (event) {
 
-
-  window.onclick = function (event) {
-
-  if(event.target.value=="company"){
+  if (event.target.value == "company") {
     document.getElementById("last_name").disabled = true;
-    document.getElementById("last_name").style.backgroundColor="#E8E8E8";
+    document.getElementById("last_name").style.backgroundColor = "#E8E8E8";
   }
-  if(event.target.value=="individual"){
+  if (event.target.value == "individual") {
     document.getElementById("last_name").disabled = false;
-    document.getElementById("last_name").style.backgroundColor="#FFFFFF";
+    document.getElementById("last_name").style.backgroundColor = "#FFFFFF";
   }
 };
 
 
 
 const radioButtons = document.querySelectorAll('input[name="d-value"]');
-for(const radioButton of radioButtons){
-    radioButton.addEventListener('change', showSelected);
-} 
+for (const radioButton of radioButtons) {
+  radioButton.addEventListener('change', showSelected);
+}
 
 
 function showSelected(e) {
   if (this.checked) {
-      txtOtherValue.style.visibility="hidden";
-      if (this.value=="other")
-      {
-        txtMessage.innerHTML="";
-        txtOtherValue.style.visibility="visible";
-        txtOtherValue.focus();
-      }
-      else
-      {
-        txtOtherValue.value="";
-        txtMessage.style.visibility="visible";
-        calculaNRefeicoes();
-      }
+    txtOtherValue.style.visibility = "hidden";
+    if (this.value == "other") {
+      txtMessage.innerHTML = "";
+      txtOtherValue.style.visibility = "visible";
+      txtOtherValue.focus();
+    }
+    else {
+      txtOtherValue.value = "";
+      txtMessage.style.visibility = "visible";
+      calculaNRefeicoes();
+    }
   }
 }
 
 
-function calculaNRefeicoes(){
-      //vamos calcular n refeiçoes e escrever a mensagem
-      var dValue = form.elements["d-value"].value;
+function calculaNRefeicoes() {
+  //vamos calcular n refeiçoes e escrever a mensagem
+  var dValue = form.elements["d-value"].value;
 
-      if (dValue == "other")
-        dValue = form.elements["txt-d-value-other"].value;
-      else if (dValue == "monthly")
-        dValue = form.elements["txt-d-value-monthly"].value;
-  
-      var nMeals = 0;
-  
-      if (dValue <= 40) {
-        nMeals = dValue / 1.5 / 2;
-        document.getElementById("message").innerHTML="*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals) + " pessoas.";
-      }
-      else {
-        nMeals = dValue / 1.5;
-        document.getElementById("message").innerHTML="*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals/2) + " pessoas.<br/>*O seu donativo permitirá fornecer aproximadamente " + parseInt(nMeals) + " refeições.";
-      }
+  if (dValue == "other")
+    dValue = form.elements["txt-d-value-other"].value;
+  else if (dValue == "monthly")
+    dValue = form.elements["txt-d-value-monthly"].value;
+
+  var nMeals = 0;
+
+  if (dValue <= 40) {
+    nMeals = dValue / 1.5 / 2;
+    document.getElementById("message").innerHTML = "*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals) + " pessoas.";
+  }
+  else {
+    nMeals = dValue / 1.5;
+    document.getElementById("message").innerHTML = "*O seu donativo permitirá alimentar diariamente " + parseInt(nMeals / 2) + " pessoas.<br/>*O seu donativo permitirá fornecer aproximadamente " + parseInt(nMeals) + " refeições.";
+  }
 }
 
-btnSaveDonation.addEventListener("click",function(){
+btnSaveDonation.addEventListener("click", function () {
   validaFormulario();
 });
 
 function validaFormulario() {
   if (form.checkValidity()) {
-      var selOther=document.getElementById("d-value-other").checked;
-      var donation= txtOtherValue.value;
-          
-      if(selOther && donation=="")
-          txtOtherValue.setCustomValidity('Please add value!');
-      else{
-           calculaNRefeicoes(notaTrab,notaExame);
-      }
+    var selOther = document.getElementById("d-value-other").checked;
+    var donation = txtOtherValue.value;
+
+    if (selOther && donation == "")
+      txtOtherValue.setCustomValidity('Please add value!');
+    else {
+      calculaNRefeicoes(notaTrab, notaExame);
+    }
   }
   else {
-      form.querySelectorAll(':invalid')[0].focus();
+    form.querySelectorAll(':invalid')[0].focus();
   }
 }
 
