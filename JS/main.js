@@ -23,9 +23,15 @@ function init() {
 //botão toggle
 function actionToggle() {
   document.getElementById('nav-dropdown').classList.toggle("nav-toggle");
-
   const lis = document.querySelectorAll('.dropdown')
   lis.forEach(lis => lis.classList.toggle('li-toggle'));
+  // Alterna a visibilidade do scroll da página principal ao abrir ou fechar o menu
+  if (document.querySelector("body").style.overflow == "hidden") {
+    document.querySelector("body").style.overflow = "auto";
+  }
+  else {
+    document.querySelector("body").style.overflow = "hidden";
+  }
 }
 
 function actionToggleUls() {
@@ -35,7 +41,6 @@ function actionToggleUls() {
   // }
 }
 
-
 //add eventlistener no click do botão, para chamar a função troca
 document.querySelector('#btn-toggle')
   .addEventListener('click', actionToggle);
@@ -44,11 +49,20 @@ document.querySelector('.dropdown')
   .addEventListener('click', actionToggleUls);
 //fim botão toggle
 
+// Mostra menu institucional
+document.getElementById("btn-institucional").addEventListener("click", function () {
+  document.getElementById("modal-institucional").style.display = "flex";
+  document.getElementById("sec-menu-institucional").style.right = 0;
+  // esconde o scroll
+  document.querySelector("body").style.overflow = "hidden";
+});
 
-
+// Fecha menu institucional
 function actionClose() {
   document.getElementById("sec-menu-institucional").style.right = "-100%";
   document.getElementById("modal-institucional").style.display = "none";
+  // mostra o scroll
+  document.querySelector("body").style.overflow = "auto";
 }
 
 document.querySelector('#btn-close')
@@ -56,10 +70,10 @@ document.querySelector('#btn-close')
 
 
 //fechar as modal ao clicar
-document.getElementById("sec-menu-institucional").addEventListener("click", function () {
-  document.getElementById("sec-menu-institucional").style.right = "-100%";
-  document.getElementById("modal-institucional").style.display = "none";
-});
+// document.getElementById("sec-menu-institucional").addEventListener("click", function () {
+//   document.getElementById("sec-menu-institucional").style.right = "-100%";
+//   document.getElementById("modal-institucional").style.display = "none";
+// });
 
 
 // Donativos
@@ -68,18 +82,19 @@ txtOtherValue.addEventListener("focusout", function () {
   calculaNRefeicoes();
 })
 
-document.getElementById("btn-institucional").addEventListener("click", function () {
-  document.getElementById("modal-institucional").style.display = "flex";
-  document.getElementById("sec-menu-institucional").style.right = 0;
-});
 
 document.getElementById("btn-donations").addEventListener("click", function () {
+  // esconde o scroll da página principal
+  document.querySelector("body").style.overflow = "hidden";
+  // mostra a modal das doações
   document.getElementById("modal-donations").style.display = "flex";
 });
 
 document.getElementById("btnCancelDonation").addEventListener("click", function () {
-  //tem de passar a botao fechar
+  // esconde a modal das doações
   document.getElementById("modal-donations").style.display="none";
+  // mostra o scroll da página principal
+  document.querySelector("body").style.overflow = "auto";
 });
 
 window.onclick = function (event) {
