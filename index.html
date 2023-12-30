@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional | DRC Danish Refugee Council</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!--scripts necessarios para o download aqui-->
+</head>
+
+<body>
+  <!--"section.container>div*4>img+a:link" e pressionar TAB:>-->
+  <header>
+    <nav>
+      <ul class="main-menu">
+        <li class="drc-logo">
+          <a href="">
+            <img src="images/drc.png" />
+          </a>
+        </li>
+        <li class="left professional">Professional</li>
+        <nav id="nav-dropdown">
+          <li class="dropdown"><a href="#">Where we work</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Europe</a></li>
+              <li><a href="#">Asia</a></li>
+              <li><a href="#">Middle East</a></li>
+              <li><a href="#">West &amp; North Africa</a></li>
+              <li><a href="#">East Africa &amp; Great Lakes</a></li>
+              <li><a href="#">Americas</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">What we do</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Core sectors</a></li>
+              <li><a href="#">Innovation and climate action</a></li>
+              <li><a href="#">DRC Standby Roster</a></li>
+              <li><a href="#">Civil Society Engagement</a></li>
+              <li><a href="#">Mixed Migration Centre</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Resources</a>
+            <ul class="dropdown-content">
+              <li><a href="#">News</a></li>
+              <li><a href="#">Documents</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Tenders</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">About us</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Organisation</a></li>
+              <li><a href="#">Partners and donors</a></li>
+              <li><a href="#">Strategic framework</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </li>
+        </nav>
+        <li><button class="button" data-modal="modal-donations" id="btn-donations"> &#9829; Donate</button></li>
+        <li>
+          <a href="#"><img src="images/icons/search.svg"></a>
+        </li>
+        <li>
+          <button data-modal="modal-menu" id="btn-toggle">&#9776;</button>
+        </li>
+        <li>
+          <button data-modal="modal-institucional" id="btn-institucional">&#10247;&#10247;&#10247;</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sec_institucional">
+      <article>
+        <p class="line1">Since 1956</p>
+        <p class="line2">Helping refugees and other displaced people worldwide</p>
+      </article>
+    </section>
+
+    <section id="sec_news">
+      <!-- <p class="preHeader">News</p> -->
+      <article>
+        <p class="text middleColor">21 Nov 2023</p>
+        <p class="text bold"><a href="#">Nyaduol's hope renewed through agriculture</a></p>
+      </article>
+      <article>
+        <p class="text middleColor">13 Nov 2023</p>
+        <p class="text bold"><a href="#">Poland: Four thousand kilometres long way to find a new home</a></p>
+      </article>
+      <article>
+        <p class="text middleColor">10 Nov 2023</p>
+        <p class="text bold"><a href="#">DRC's support to Ukrainian civilians traveling from Poland to their hometowns:
+            a glimpse into the mine risk education activities in Poland</a></p>
+      </article>
+    </section>
+
+    <section id="sec_articles">
+      <article>
+        <div class="zoom"><img src="images/media/article1.jpg" alt="#"></div>
+        <p class="text bold">Foresight: Displacement forecasts</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+
+      <article>
+        <div class="zoom"><img src="images/media/article2.jpg" alt="#"></div>
+        <p class="text bold">Climate & environment action</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+
+      <article>
+        <div class="zoom"><img src="images/media/article3.jpg" alt="#"></div>
+        <p class="text bold">Mixed Migration Centre</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+
+      <article>
+        <div class="zoom"><img src="images/media/article4.jpg" alt="Safety trainings"></div>
+        <p class="text bold">Safety trainings</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+    </section>
+
+    <section id="sec_records">
+      <article>
+        <img id="i1956" src="images/1956.svg" alt="">
+        <p class="text bold">Since 1956</p>
+        <p class="text">DRC Danish Refugee Council has helped refugees and displaced people for more than 60 years.</p>
+      </article>
+      <article>
+        <img id="medal" src="images/medal.svg" alt="">
+        <p class="text bold">World leading NGO</p>
+        <p class="text">DRC Danish Refugee Council continuously ranks as one of the best NGOs in the world.</p>
+      </article>
+      <article>
+        <img id="map" src="images/map.svg" alt="">
+        <p class="text bold">Worldwide impact</p>
+        <p class="text">DRC Danish Refugee Council helps refugees and displaced people in the whole world.</p>
+      </article>
+    </section>
+
+    <section id="sec_world">
+      <article>
+        <p class="preHeader">Where We Work</p>
+        <p class="header">DRC Danish Refugee Council is currently working in 40 countries around the world.</p>
+        <p class="text">Spin the globe, click on the dots and read more about our work for refugees and other displaced
+          people around the world.</p>
+
+        <div class="paste">
+          <div id="myearth" class="earth-container earth-ready">
+            <canvas width="1479" height="583" style="display: block; width: 1183.2px; height: 466.75px;"></canvas>
+            <div class="earth-overlay earth-overlay-top earth-occluded" style="display: none; z-index: 10;">
+              <div class="tooltip"></div>
+            </div>
+            <canvas width="583" height="403" style="display: block; width: 583px; height: 403.25px;"></canvas>
+            <div class="earth-overlay earth-overlay-left" style="display: none; z-index: 1010;">
+              <div class="tooltip"></div>
+            </div>
+            <canvas width="583" height="403" style="display: block; width: 583px; height: 403.25px;"></canvas>
+            <div class="earth-overlay earth-overlay-left" style="display: none; z-index: 1010;">
+              <div class="tooltip"></div>
+            </div>
+          </div>
+          <p class="globe-regions">
+            <a href="https://pro.drc.ngo/where-we-work/europe/">Europe</a> |
+            <a href="https://pro.drc.ngo/where-we-work/asia/">Asia</a> |
+            <a href="https://pro.drc.ngo/where-we-work/middle-east/">Middle East</a> |
+            <a href="https://pro.drc.ngo/where-we-work/west-north-africa/">West &amp; North Africa</a> |
+            <a href="https://pro.drc.ngo/where-we-work/east-africa-great-lakes/">East Africa &amp; Great Lakes</a> |
+            <a href="https://pro.drc.ngo/where-we-work/Americas/">Americas</a>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <h1 id="about-work">About our work</h1>
+    <section id="sec_about_work">
+      <article>
+        <div class="zoom"><img src="images/drc_background_black.png" alt="#"></div>
+        <p class="text bold">Where we work</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+
+      <article>
+        <div class="zoom"><img src="images/frontpage-burkinafaso.jpg" alt="#"></div>
+        <p class="text bold">Strategy 2025</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+
+      <article>
+        <div class="zoom"><img src="images/5-core-sectors-ny-red2.jpg" alt="#"></div>
+        <p class="text bold">Core sectors</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+
+      <article>
+        <div class="zoom"><img src="images/idp-settlement_15702601144_o_about_us.jpg" alt="Safety trainings"></div>
+        <p class="text bold">About us</p>
+        <a href="#" class="button">Read more</a>
+      </article>
+    </section>
+
+    <section id="sec_message">
+      <article>
+        <img src="images/media/charlotte.jpg" alt="#">
+        <p class="preHeader middleColor bold">People flee when they fear for their lives. We assist refugees and the
+          displaced, protect their rights and empower them towards a better future.</p>
+        <p class="text middleColor">Charlotte Slente, Secretary General of the Danish Refugee Council</p>
+      </article>
+    </section>
+
+    <section id="sec_donations">
+      <div id="modal-donations" class="modal">
+        <form action="" class="frm-donations" id="frm-donations">
+          <fieldset>
+            <p class="preHeader bold">1. Donation type:</p>
+            <input type="radio" id="oneoffRadio" name="donationType" value="oneoff" required><label
+              for="oneoffRadio">One-off</label><br>
+            <input type="radio" id="monthlyRadio" name="donationType" value="monthly" required><label
+              for="monthlyRadio">Monthly</label>
+          </fieldset>
+          <p class="preHeader bold col3">2. Donation amount</p>
+          <fieldset id="fldAmount" class="grid3">
+            <p class="text col3">choose your amount:</p>
+            <label class="label"><input class="text" type="radio" data="20" name="d-value" id="d-value-20" required
+                value="20">20€</label>
+            <label class="label"><input class="text" type="radio" data="40" name="d-value" id="d-value-40" required
+                value="40">40€</label>
+            <label class="label"><input class="text" type="radio" data="80" name="d-value" id="d-value-80" required
+                value="80">80€</label>
+          </fieldset>
+          <label class="label col3">
+            <input class="text" type="radio" data="other" name="d-value" id="d-value-other" required
+              value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other" min="5"></input>
+          </label>
+          <p class="message col3" value="message" id="message"></p>
+
+          <fieldset>
+            <p class="preHeader bold">3. Your information</p>
+            <label>
+              <input type="radio" name="information" id="individual" required value="individual" checked
+                autocomplete="off" required>Individual
+            </label>
+            <label>
+              <input type="radio" name="information" id="company" required value="company" autocomplete="off" required>Company
+            </label>
+          </fieldset>
+          <fieldset class="grid2">
+            <label class="label" for="name">Name *</label>
+            <input type="text" name="name" id="name" required autocomplete="off">
+            <label class="label" for="last_name">Last name </label>
+            <input type="text" name="last_name" id="last_name" autocomplete="off">
+            <label class="label" class="text" for="email_address">Email *</label>
+            <input type="email" name="email_address" id="email_address" required>
+            <label class="label" for="phone_number">Phone number *</label>
+            <input type="tel" name="phone_number" id="phone_number" required autocomplete="off">
+            <label class="label" for="nif">NIF *</label>
+            <input type="number" name="nif" id="nif" required value="" minlength="9" maxlength="9" pattern="\d{9}"
+              autocomplete="off">
+          </fieldset>
+
+          <fieldset id="fldAddress" class="grid2">
+            <input type="text" id="street" name="street" placeholder="Street *">
+            <input type="text" id="city" name="city" placeholder="City *">
+            <input type="text" id="zip" name="zip" placeholder="ZIP Code *">
+            <input type="text" id="countryAddr" name="country" placeholder="Country *">
+          </fieldset>
+
+          <fieldset class="grid2">
+            <p class="preHeader bold col2">4. Where to help</p>
+            <label class="label" for="country">Country</label>
+            <select name="country" id="country" autocomplete="off" required>
+              <option value="" disabled selected hidden>Choose a country</option>
+              <option value="algeria">Algeria</option>
+              <option value="burkina-faso">Burkina Faso</option>
+              <option value="cameroon">Cameroon</option>
+              <option value="caf">Central African Republic</option>
+              <option value="libya">Libya</option>
+              <option value="mali">Mali</option>
+              <option value="niger">Niger</option>
+              <option value="nigeria">Nigeria</option>
+              <option value="tunisia">Tunisia</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="grid2">
+            <p class="preHeader bold col2">5. Payment information</p>
+            <label class="label" for="name">Card number</label>
+            <input type="text" name="cardNumber" id="cardNumber" minlength="16" maxlength="16" pattern="\d{16}"
+              placeholder="xxxxxxxxxxxxxxxx" required autocomplete="off">
+            <label class="label" for="expirationDate">Expiration date</label>
+            <input type="month" name="expirationDate" id="expirationDate" required autocomplete="off">
+            <label class="label" for="securityCode">Security code</label>
+            <input type="text" name="securityCode" id="securityCode" minlength="3" maxlength="3" pattern="\d{3}"
+              inputmode="numeric" required autocomplete="off">
+          </fieldset>
+
+          <fieldset>
+            <button type="submit" id="btnSaveDonation">Give now</button>
+            <button type="reset" id="btnCancelDonation">Close</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section id="sec-menu-institucional">
+      <div id="modal-institucional" class="modal">
+        <button class="preHeader bold" id="btn-close">»</button>
+        <p class="preHeader bold">Our sites</p>
+        <p></p>
+        <p class="preHeader2">Home</p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">www.drc.ngo</p>
+          <p class="text">See all DRC sites and choose your section.</p>
+        </a>
+        <p></p>
+        <p class="preHeader2">English sites</p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Help</p>
+          <p class="text">Read about our work and support people on the move.</p>
+        </a>
+        <p></p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Jobs</p>
+          <p class="text">Want to work in DRC?</p>
+        </a>
+        <p></p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Forum</p>
+          <p class="text">Sign up for the DRC Global Innovation Forum.</p>
+        </a>
+        <p></p>
+        <p class="preHeader2">Danske sites</p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Help</p>
+          <p class="text">Læs om vores arbejde for verdens flygtninge og støt.</p>
+        </a>
+        <p></p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Shops</p>
+          <p class="text">Køb en T-shirt, kop eller plakat.</p>
+        </a>
+        <p></p>
+        <a href="https://www.drc.ngo">
+          <p class="bold">Asyl</p>
+          <p class="text">Rådgivning om asyl i Danmark.</p>
+        </a>
+        <p></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="copyright">
+      <p class="caption">© 2023 DRC Danish Refugee Council</p>
+    </div>
+    <div id="links">
+      <ul>
+        <li><a href="#" class="caption">Cookie Settings</a></li>
+        <li><a href="#" class="caption">Privacy Policy</a></li>
+        <li><a href="#" class="caption">Code of Conduct</a></li>
+        <li><a href="#" class="caption">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div id="social">
+      <a href="https://www.facebook.com/danishrefugeecouncil">
+        <img src="images/icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/danishrefugeecouncil">
+        <img src="images/icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://www.linkedin.com/company/danish-refugee-council">
+        <img src="images/icons/linkedin.svg" alt="Linkedin"></a>
+      <a href="https://twitter.com/drc_ngo">
+        <img src="images/icons/twitter-x.svg" alt="X"></a>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="JS/main.js"></script>
+</body>
+
+</html>
