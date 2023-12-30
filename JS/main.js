@@ -4,6 +4,11 @@ const btnSaveDonation = document.getElementById("btnSaveDonation");
 const form = document.querySelector('form');
 const expirationDate = document.getElementById("expirationDate");
 const monthlyRadio = document.getElementById("monthlyRadio");
+const oneoffRadio = document.getElementById("oneoffRadio");
+const fldAmount = document.getElementById("fldAmount");
+const dvalue20 = document.getElementById("d-value-20");
+const dvalue40 = document.getElementById("d-value-40");
+const dvalue80 = document.getElementById("d-value-80");
 
 
 // Evento para que o submit não submeta qualquer dados
@@ -19,6 +24,7 @@ window.onload = function () {
 function init() {
   txtMessage.style.visibility = "hidden";
   txtOtherValue.style.visibility = "hidden";
+  fldAddress.style.display = "none";
 
   const date = currentDate();
   expirationDate.min = date;
@@ -125,12 +131,21 @@ document.getElementById("btnCancelDonation").addEventListener("click", function 
   document.querySelector("body").style.overflow = "auto";
 });
 
-monthlyRadio.addEventListener("click", function() {
-  const fldAddress = document.getElementById("fldAddress");
+oneoffRadio.addEventListener("click", function () {
+  // console.log('Oneoff radio button clicked');
+  var fldAddress = document.getElementById("fldAddress");
   if (this.checked) {
-      fldAddress.style.display = "";
-  } else {
-      fldAddress.style.display = "none";
+    fldAddress.style.display = "none";
+    fldAmount.style.display = "";
+  }
+});
+
+monthlyRadio.addEventListener("click", function () {
+  // console.log('Monthly radio button clicked');
+  var fldAddress = document.getElementById("fldAddress");
+  if (this.checked) {
+    fldAddress.style.display = "";
+    fldAmount.style.display = "none";
   }
 });
 

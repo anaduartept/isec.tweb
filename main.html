@@ -220,11 +220,13 @@
         <form action="" class="frm-donations" id="frm-donations">
           <fieldset>
             <p class="preHeader bold">1. Donation type:</p>
-            <input type="radio" id="oneoffRadio" name="donationType" value="oneoff" checked><label for="oneoffRadio">One-off</label><br>
-            <input type="radio" id="monthlyRadio" name="donationType" value="monthly"><label for="monthlyRadio">Monthly</label>
+            <input type="radio" id="oneoffRadio" name="donationType" value="oneoff" checked><label
+              for="oneoffRadio">One-off</label><br>
+            <input type="radio" id="monthlyRadio" name="donationType" value="monthly"><label
+              for="monthlyRadio">Monthly</label>
           </fieldset>
-          <fieldset class="grid3">
-            <p class="preHeader bold col3">2. Donation amount</p>
+          <p class="preHeader bold col3">2. Donation amount</p>
+          <fieldset id="fldAmount" class="grid3">
             <p class="text col3">choose your amount:</p>
             <label class="label"><input class="text" type="radio" data="20" name="d-value" id="d-value-20" required
                 value="20">20€</label>
@@ -232,11 +234,11 @@
                 value="40">40€</label>
             <label class="label"><input class="text" type="radio" data="80" name="d-value" id="d-value-80" required
                 value="80">80€</label>
-            <label class="label col3"><input class="text" type="radio" data="other" name="d-value" id="d-value-other"
-                required value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other"
-                min="5"></input></label>
-            <p class="message col3" value="message" id="message"></p>
           </fieldset>
+          <label class="label col3"><input class="text" type="radio" data="other" name="d-value" id="d-value-other"
+              required value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other"
+              min="5"></input></label>
+          <p class="message col3" value="message" id="message"></p>
 
           <fieldset>
             <p class="preHeader bold">3. Your information</p>
