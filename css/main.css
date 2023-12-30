@@ -349,7 +349,7 @@ section {
 }
 #sec_donations .frm-donations {
   padding: 0.5em;
-  width: 25rem;
+  width: 30rem;
   background-color: white;
   overflow: auto;
 }
@@ -360,7 +360,7 @@ section {
 }
 #sec_donations .frm-donations .grid2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: row;
 }
 #sec_donations .frm-donations .col2 {
@@ -368,7 +368,7 @@ section {
 }
 #sec_donations .frm-donations .grid3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: row;
 }
 #sec_donations .frm-donations .col3 {

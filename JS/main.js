@@ -3,6 +3,8 @@ const txtMessage = document.getElementById("message");
 const btnSaveDonation = document.getElementById("btnSaveDonation");
 const form = document.querySelector('form');
 const expirationDate = document.getElementById("expirationDate");
+const monthlyRadio = document.getElementById("monthlyRadio");
+
 
 // Evento para que o submit não submeta qualquer dados
 form.addEventListener('submit', function (event) {
@@ -122,6 +124,16 @@ document.getElementById("btnCancelDonation").addEventListener("click", function 
   // mostra o scroll da página principal
   document.querySelector("body").style.overflow = "auto";
 });
+
+monthlyRadio.addEventListener("click", function() {
+  const fldAddress = document.getElementById("fldAddress");
+  if (this.checked) {
+      fldAddress.style.display = "";
+  } else {
+      fldAddress.style.display = "none";
+  }
+});
+
 
 window.onclick = function (event) {
 

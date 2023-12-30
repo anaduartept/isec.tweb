@@ -218,8 +218,13 @@
     <section id="sec_donations">
       <div id="modal-donations" class="modal">
         <form action="" class="frm-donations" id="frm-donations">
+          <fieldset>
+            <p class="preHeader bold">1. Donation type:</p>
+            <input type="radio" id="oneoffRadio" name="donationType" value="oneoff" checked><label for="oneoffRadio">One-off</label><br>
+            <input type="radio" id="monthlyRadio" name="donationType" value="monthly"><label for="monthlyRadio">Monthly</label>
+          </fieldset>
           <fieldset class="grid3">
-            <p class="preHeader bold col3">1. Your donation</p>
+            <p class="preHeader bold col3">2. Donation amount</p>
             <p class="text col3">choose your amount:</p>
             <label class="label"><input class="text" type="radio" data="20" name="d-value" id="d-value-20" required
                 value="20">20€</label>
@@ -231,11 +236,10 @@
                 required value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other"
                 min="5"></input></label>
             <p class="message col3" value="message" id="message"></p>
-            <!-- <label class="label"><input class="text" type="radio" data="monthly" name="d-value" id="d-value-monthly" required value="monthly">Monthly<span id="sp2" class="hide"><input type="number" name="txt-d-value-monthly" id="txt-d-value-montlhy" min="5" step="5"></input>€</span></label> -->
           </fieldset>
 
           <fieldset>
-            <p class="preHeader bold">2. Your information</p>
+            <p class="preHeader bold">3. Your information</p>
             <label>
               <input type="radio" name="information" id="individual" required value="individual" checked
                 autocomplete="off">Individual
@@ -249,16 +253,24 @@
             <input type="text" name="name" id="name" required autocomplete="off">
             <label class="label" for="last_name">Last name </label>
             <input type="text" name="last_name" id="last_name" autocomplete="off">
-            <label class="label" class="text" for="email_address">Email</label>
+            <label class="label" class="text" for="email_address">Email *</label>
             <input type="email" name="email_address" id="email_address" required>
             <label class="label" for="phone_number">Phone number *</label>
             <input type="tel" name="phone_number" id="phone_number" required autocomplete="off">
             <label class="label" for="nif">NIF *</label>
-            <input type="number" name="nif" id="nif" required value="" minlength="9" maxlength="9" pattern="\d{9}" autocomplete="off">
+            <input type="number" name="nif" id="nif" required value="" minlength="9" maxlength="9" pattern="\d{9}"
+              autocomplete="off">
+          </fieldset>
+
+          <fieldset id="fldAddress" class="grid2">
+            <input type="text" id="street" name="street" placeholder="Street">
+            <input type="text" id="city" name="city" placeholder="City">
+            <input type="text" id="zip" name="zip" placeholder="ZIP Code">
+            <input type="text" id="countryAddr" name="country" placeholder="Country">
           </fieldset>
 
           <fieldset class="grid2">
-            <p class="preHeader bold col2">3. Where to help</p>
+            <p class="preHeader bold col2">4. Where to help</p>
             <label class="label" for="country">Country</label>
             <select name="country" id="country" autocomplete="off" required>
               <option value="" disabled selected hidden>Choose a country</option>
@@ -275,13 +287,15 @@
           </fieldset>
 
           <fieldset class="grid2">
-            <p class="preHeader bold col2">4. Payment information</p>
+            <p class="preHeader bold col2">5. Payment information</p>
             <label class="label" for="name">Card number</label>
-            <input type="text" name="cardNumber" id="cardNumber" minlength="16" maxlength="16" pattern="\d{16}" placeholder="xxxxxxxxxxxxxxxx" required autocomplete="off">
+            <input type="text" name="cardNumber" id="cardNumber" minlength="16" maxlength="16" pattern="\d{16}"
+              placeholder="xxxxxxxxxxxxxxxx" required autocomplete="off">
             <label class="label" for="expirationDate">Expiration date</label>
             <input type="month" name="expirationDate" id="expirationDate" required autocomplete="off">
             <label class="label" for="securityCode">Security code</label>
-            <input type="text" name="securityCode" id="securityCode" minlength="3" maxlength="3" pattern="\d{3}" inputmode="numeric" required autocomplete="off">
+            <input type="text" name="securityCode" id="securityCode" minlength="3" maxlength="3" pattern="\d{3}"
+              inputmode="numeric" required autocomplete="off">
           </fieldset>
 
           <fieldset>
