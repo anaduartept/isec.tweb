@@ -1,3 +1,4 @@
+const dValueOther = document.getElementById("d-value-other");
 const txtOtherValue = document.getElementById("txt-d-value-other");
 const txtMessage = document.getElementById("message");
 const btnSaveDonation = document.getElementById("btnSaveDonation");
@@ -6,12 +7,13 @@ const expirationDate = document.getElementById("expirationDate");
 const monthlyRadio = document.getElementById("monthlyRadio");
 const oneoffRadio = document.getElementById("oneoffRadio");
 const fldAmount = document.getElementById("fldAmount");
-const dvalue20 = document.getElementById("d-value-20");
-const dvalue40 = document.getElementById("d-value-40");
-const dvalue80 = document.getElementById("d-value-80");
+const selectCountry = document.getElementById("country");
+const fldAddress = document.getElementById("fldAddress");
+const individualRadio = document.getElementById("individual");
+const companyRadio = document.getElementById("company");
 
 
-// Evento para que o submit não submeta qualquer dados
+// Evento para que o submit não submeta quaisquer dados
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 });
@@ -26,9 +28,6 @@ function init() {
   txtOtherValue.style.visibility = "hidden";
   fldAddress.style.display = "none";
 
-  const date = currentDate();
-  expirationDate.min = date;
-  expirationDate.value = date;
 }
 
 function validaNome(fld) {
@@ -111,18 +110,47 @@ document.querySelector('#btn-close')
 
 
 // Donativos
-
 txtOtherValue.addEventListener("focusout", function () {
   calculaNRefeicoes();
 })
 
-
+// mostra o formulário de doações ao clicar no botão
 document.getElementById("btn-donations").addEventListener("click", function () {
   // esconde o scroll da página principal
   document.querySelector("body").style.overflow = "hidden";
   // mostra a modal das doações
   document.getElementById("modal-donations").style.display = "flex";
+  initFormDonation();
 });
+
+function initFormDonation() {
+  // Limpar todos os inputs que não sejam radio buttons
+  const inputs = document.querySelectorAll('input:not([type="radio"])');
+  for(var i = 0; i < inputs.length; i++) {
+    inputs[i].value = '';
+  }
+
+  // Limpar seleção do país
+  selectCountry.value = '';
+
+  // Selecionar os radio buttons oneoff, individual e o valor 20 por defeito
+  document.getElementById("oneoffRadio").checked = true;
+  document.getElementById("individual").checked = true;
+  document.getElementById("d-value-20").checked = true;
+
+  // Ativar o campo do last name
+  document.getElementById("last_name").disabled = false;
+  document.getElementById("last_name").style.backgroundColor = "#FFFFFF";
+
+  // Esconder o campo de outro valor
+  txtOtherValue.style.visibility = "hidden";
+
+  // colocar a data atual no campo de data de expiração
+  const date = currentDate();
+  expirationDate.min = date;
+  expirationDate.value = date;
+}
+
 
 document.getElementById("btnCancelDonation").addEventListener("click", function () {
   // esconde a modal das doações
@@ -144,6 +172,8 @@ monthlyRadio.addEventListener("click", function () {
   // console.log('Monthly radio button clicked');
   var fldAddress = document.getElementById("fldAddress");
   if (this.checked) {
+    dValueOther.checked = true;
+    txtOtherValue.style.visibility = "visible";
     fldAddress.style.display = "";
     fldAmount.style.display = "none";
   }
@@ -161,7 +191,6 @@ window.onclick = function (event) {
     document.getElementById("last_name").style.backgroundColor = "#FFFFFF";
   }
 };
-
 
 
 const radioButtons = document.querySelectorAll('input[name="d-value"]');

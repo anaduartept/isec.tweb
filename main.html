@@ -220,9 +220,9 @@
         <form action="" class="frm-donations" id="frm-donations">
           <fieldset>
             <p class="preHeader bold">1. Donation type:</p>
-            <input type="radio" id="oneoffRadio" name="donationType" value="oneoff" checked><label
+            <input type="radio" id="oneoffRadio" name="donationType" value="oneoff" required><label
               for="oneoffRadio">One-off</label><br>
-            <input type="radio" id="monthlyRadio" name="donationType" value="monthly"><label
+            <input type="radio" id="monthlyRadio" name="donationType" value="monthly" required><label
               for="monthlyRadio">Monthly</label>
           </fieldset>
           <p class="preHeader bold col3">2. Donation amount</p>
@@ -235,19 +235,20 @@
             <label class="label"><input class="text" type="radio" data="80" name="d-value" id="d-value-80" required
                 value="80">80€</label>
           </fieldset>
-          <label class="label col3"><input class="text" type="radio" data="other" name="d-value" id="d-value-other"
-              required value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other"
-              min="5"></input></label>
+          <label class="label col3">
+            <input class="text" type="radio" data="other" name="d-value" id="d-value-other" required
+              value="other">Other<input type="number" name="txt-d-value-other" id="txt-d-value-other" min="5"></input>
+          </label>
           <p class="message col3" value="message" id="message"></p>
 
           <fieldset>
             <p class="preHeader bold">3. Your information</p>
             <label>
               <input type="radio" name="information" id="individual" required value="individual" checked
-                autocomplete="off">Individual
+                autocomplete="off" required>Individual
             </label>
             <label>
-              <input type="radio" name="information" id="company" required value="company" autocomplete="off">Company
+              <input type="radio" name="information" id="company" required value="company" autocomplete="off" required>Company
             </label>
           </fieldset>
           <fieldset class="grid2">
@@ -265,10 +266,10 @@
           </fieldset>
 
           <fieldset id="fldAddress" class="grid2">
-            <input type="text" id="street" name="street" placeholder="Street">
-            <input type="text" id="city" name="city" placeholder="City">
-            <input type="text" id="zip" name="zip" placeholder="ZIP Code">
-            <input type="text" id="countryAddr" name="country" placeholder="Country">
+            <input type="text" id="street" name="street" placeholder="Street *">
+            <input type="text" id="city" name="city" placeholder="City *">
+            <input type="text" id="zip" name="zip" placeholder="ZIP Code *">
+            <input type="text" id="countryAddr" name="country" placeholder="Country *">
           </fieldset>
 
           <fieldset class="grid2">
