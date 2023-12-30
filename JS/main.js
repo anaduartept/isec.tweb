@@ -1,8 +1,8 @@
-
-var txtOtherValue = document.getElementById("txt-d-value-other");
-var txtMessage = document.getElementById("message");
-var btnSaveDonation = document.getElementById("btnSaveDonation");
-var form = document.querySelector('form');
+const txtOtherValue = document.getElementById("txt-d-value-other");
+const txtMessage = document.getElementById("message");
+const btnSaveDonation = document.getElementById("btnSaveDonation");
+const form = document.querySelector('form');
+const expirationDate = document.getElementById("expirationDate");
 
 // Evento para que o submit não submeta qualquer dados
 form.addEventListener('submit', function (event) {
@@ -17,6 +17,32 @@ window.onload = function () {
 function init() {
   txtMessage.style.visibility = "hidden";
   txtOtherValue.style.visibility = "hidden";
+
+  const date = currentDate();
+  expirationDate.min = date;
+  expirationDate.value = date;
+}
+
+function validaNome(fld) {
+  var letters = /^[A-zÀ-ú]+$/;
+  if (fld.value.trim().match(letters))
+    return true;
+  return false;
+}
+
+function currentDate() {
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1; // JavaScript months are 0-based, so add 1
+
+  // Pad the month with a leading zero if necessary
+  if (month < 10) {
+    month = '0' + month;
+  }
+
+  // Format the year and month in the "YYYY-MM" format
+  var currentDate = year + '-' + month;
+  return currentDate;
 }
 
 
@@ -92,7 +118,7 @@ document.getElementById("btn-donations").addEventListener("click", function () {
 
 document.getElementById("btnCancelDonation").addEventListener("click", function () {
   // esconde a modal das doações
-  document.getElementById("modal-donations").style.display="none";
+  document.getElementById("modal-donations").style.display = "none";
   // mostra o scroll da página principal
   document.querySelector("body").style.overflow = "auto";
 });
@@ -164,11 +190,18 @@ function validaFormulario() {
     var selOther = document.getElementById("d-value-other").checked;
     var donation = txtOtherValue.value;
 
-    if (selOther && donation == "")
+    if (selOther && donation == "") {
       txtOtherValue.setCustomValidity('Please add value!');
-    else {
-      calculaNRefeicoes(notaTrab, notaExame);
+      return;
     }
+
+    calculaNRefeicoes();
+    alert("Thank you for your donation!");
+    // esconde a modal das doações
+    document.getElementById("modal-donations").style.display = "none";
+    // mostra o scroll da página principal
+    document.querySelector("body").style.overflow = "auto";
+
   }
   else {
     form.querySelectorAll(':invalid')[0].focus();
