@@ -26,6 +26,12 @@
         </li>
         <li class="left professional">Professional</li>
         <nav id="nav-dropdown">
+          <li class="dropdown"><a href="#">Novo menu</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Submenu 1</a></li>
+              <li><a href="#">Submenu 1</a></li>
+            </ul>
+          </li>
           <li class="dropdown"><a href="#">Where we work</a>
             <ul class="dropdown-content">
               <li><a href="#">Europe</a></li>
@@ -64,7 +70,8 @@
         </nav>
         <li><button class="button" data-modal="modal-donations" id="btn-donations"> &#9829; Donate</button></li>
         <li>
-          <a href="#"><img src="images/icons/search.svg"></a>
+          <input class="" type="text" placeholder="Search" id="txtsearch" name="txt-search">
+          <a href="#" id="txtsearchlink"><img src="images/icons/search.svg"></a>
         </li>
         <li>
           <button data-modal="modal-menu" id="btn-toggle">&#9776;</button>
@@ -104,27 +111,34 @@
     <section id="sec_articles">
       <article>
         <div class="zoom"><img src="images/media/article1.jpg" alt="#"></div>
-        <p class="text bold">Foresight: Displacement forecasts</p>
-        <a href="#" class="button">Read more</a>
+        <div class="textbutton">
+          <p class="text bold">Foresight: Displacement forecasts</p>
+          <a href="#" class="button">Read more</a>
+        </div>
       </article>
 
       <article>
         <div class="zoom"><img src="images/media/article2.jpg" alt="#"></div>
-        <p class="text bold">Climate & environment action</p>
+        <div class="textbutton">
+          <p class="text bold">Climate & environment action</p>
         <a href="#" class="button">Read more</a>
       </article>
 
       <article>
         <div class="zoom"><img src="images/media/article3.jpg" alt="#"></div>
-        <p class="text bold">Mixed Migration Centre</p>
+        <div class="textbutton">
+          <p class="text bold">Mixed Migration Centre</p>
         <a href="#" class="button">Read more</a>
-      </article>
+      </div>
+    </article>
 
       <article>
         <div class="zoom"><img src="images/media/article4.jpg" alt="Safety trainings"></div>
-        <p class="text bold">Safety trainings</p>
+        <div class="textbutton">
+          <p class="text bold">Safety trainings</p>
         <a href="#" class="button">Read more</a>
-      </article>
+      </div>
+    </article>
     </section>
 
     <section id="sec_records">
@@ -248,7 +262,8 @@
                 autocomplete="off" required>Individual
             </label>
             <label>
-              <input type="radio" name="information" id="company" required value="company" autocomplete="off" required>Company
+              <input type="radio" name="information" id="company" required value="company" autocomplete="off"
+                required>Company
             </label>
           </fieldset>
           <fieldset class="grid2">

@@ -217,6 +217,14 @@ li.dropdown {
         font-size: 26px;
         letter-spacing: -10px;
     }
+
+    #txtsearch {
+        display: none;
+
+        &.show {
+            display: inline-block;
+        }    
+    }
 }
 
 .zoom {
@@ -345,7 +353,7 @@ section {
     height: auto;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
 
     img {
@@ -360,7 +368,8 @@ section {
         background-repeat: repeat-y, no-repeat;
         padding: 0 5px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+
 
         .button {
             width: fit-content;

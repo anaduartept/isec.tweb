@@ -148,6 +148,12 @@ li.dropdown {
   font-size: 26px;
   letter-spacing: -10px;
 }
+.main-menu #txtsearch {
+  display: none;
+}
+.main-menu #txtsearch.show {
+  display: inline-block;
+}
 
 .zoom {
   overflow: hidden;
@@ -247,7 +253,7 @@ section {
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
 }
 #sec_articles img,
@@ -263,7 +269,7 @@ section {
   background-repeat: repeat-y, no-repeat;
   padding: 0 5px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 #sec_articles article .button,
 #sec_about_work article .button {

@@ -11,7 +11,16 @@ const selectCountry = document.getElementById("country");
 const fldAddress = document.getElementById("fldAddress");
 const individualRadio = document.getElementById("individual");
 const companyRadio = document.getElementById("company");
+const txtSearch = document.getElementById("txtsearch");
+const txtsearchlink = document.getElementById("txtsearchlink");
 
+// Event listener para mostrar a caixa de texto
+txtsearchlink.addEventListener('click', function () {
+  console.log('txtSearch clicked');
+  //txtSearch.style.display = "inline-block";
+  txtSearch.classList.toggle("show");
+  txtSearch.focus();
+});
 
 // Evento para que o submit não submeta quaisquer dados
 form.addEventListener('submit', function (event) {
