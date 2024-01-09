@@ -16,7 +16,7 @@ const txtsearchlink = document.getElementById("txtsearchlink");
 
 // Event listener para mostrar a caixa de texto
 txtsearchlink.addEventListener('click', function () {
-  console.log('txtSearch clicked');
+  //console.log('txtSearch clicked');
   //txtSearch.style.display = "inline-block";
   txtSearch.classList.toggle("show");
   txtSearch.focus();
